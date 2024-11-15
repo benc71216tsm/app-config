@@ -1,0 +1,31 @@
+server:
+  port: 8080
+
+spring:
+  timezone: UTC+08:00
+  application:
+    name: MARS-GATEWAY
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+eureka:
+  client:
+    register-with-eureka: false
+    fetchRegistry: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+  instance:
+    hostname: localhost
+    prefer-ip-address: true
+jwt:
+  auth:
+    secret: UUtvOYvp9YHz/kQpTYTimW52hefnIW5eh49gnJHZqp4=
+    expiration: 300000 # Access token lifespan (5 min)
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
