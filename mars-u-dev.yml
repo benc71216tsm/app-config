@@ -6,7 +6,7 @@ server:
 spring:
   timezone: UTC+08:00
   application:
-    name: CHUBB-U
+    name: MARS-U
   eureka:
     client:
       service-url:
