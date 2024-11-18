@@ -12,8 +12,6 @@ eureka:
   client:
     register-with-eureka: false
     fetchRegistry: false
-    serviceUrl:
-      defaultZone: http://mars-eureka:8761/eureka/
   server:
     waitTimeInMsWhenSyncEmpty: 0
     renewalPercentThreshold: 0.33
