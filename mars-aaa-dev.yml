@@ -10,7 +10,7 @@ spring:
   eureka:
     client:
       service-url:
-        defaultZone: http://localhost:8761/eureka
+        defaultZone: http://localhost:8761/eureka/
     instance:
       hostname: localhost
       prefer-ip-address: true
@@ -45,5 +45,5 @@ logging:
     level: "%5p [${spring.application.name:},%X{traceId:-},%X{spanId:-}]"
 
 user-service:
-  name: mars-u
+  name: mars-userm
   url: http://localhost:8083
