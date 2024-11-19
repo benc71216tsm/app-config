@@ -59,7 +59,7 @@ jwt:
 eureka:
   client:
     service-url:
-      defaultZone: http://mars-eureka:8761/eureka/
+      defaultZone: ${EUREKA_CLIENT_SERVICEURL_DEFAULTZONE}
     
 redis:
   address: redis://${REDIS_HOSTNAME}:6379    # Redis server address with redis:// protocol

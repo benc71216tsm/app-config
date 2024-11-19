@@ -16,9 +16,7 @@ eureka:
     fetchRegistry: true
     service-url:
       defaultZone: ${EUREKA_CLIENT_SERVICEURL_DEFAULTZONE}
-  instance:
-    hostname: ${EUREKA_HOSTNAME}
-    prefer-ip-address: true
+      
 jwt:
   auth:
     secret: UUtvOYvp9YHz/kQpTYTimW52hefnIW5eh49gnJHZqp4=
