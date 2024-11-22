@@ -21,7 +21,6 @@ mqtt:
   username: techstore
   password: m751eLp
     
-    
 interpreter-service:
   name: mars-k3i
   url: http://localhost:9806
