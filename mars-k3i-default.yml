@@ -19,4 +19,5 @@ redis:
   database: 2                              # Default Redis database index
 
 logging:
-  config: "classpath:log4j2-${PROFILE}.xml"
+  pattern:
+    level: "%5p [${spring.application.name:},%X{traceId:-},%X{spanId:-}]"
