@@ -26,4 +26,5 @@ interpreter-service:
   url: http://localhost:9806
   
 logging:
-  config: "classpath:log4j2-dev.xml"
+  pattern:
+    level: "%5p [${spring.application.name:},%X{traceId:-},%X{spanId:-}]"
