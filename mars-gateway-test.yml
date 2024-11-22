@@ -7,20 +7,23 @@ spring:
     name: mars-gateway
   cloud:
     gateway:
-      globalcors:
-        corsConfigurations:
-          '[/**]':
-            allowedOrigins: "https://localhost:3000"
-            allowedMethods:
-              - GET
-              - POST
-              - PUT
-              - DELETE
-              - OPTIONS
-            allowedHeaders: "*"
       discovery:
         locator:
           enabled: true
+      globalcors:
+        cors-configurations:
+          '[/**]':  # Applies to all paths
+            allowedOrigins: 
+                - "http://localhost:3000"
+            allowedMethods: 
+                - GET
+                - POST
+                - PUT
+                - DELETE
+                - OPTIONS
+            allowedHeaders: 
+                - "*"
+            allowCredentials: true
 eureka:
   client:
     register-with-eureka: false
