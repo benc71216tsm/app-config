@@ -80,4 +80,4 @@ user-service:
   url: http://localhost:8083
 
 file-storage:
-    path: /tmp/file-storage
+    path: C:\Users\Cheong KP\Desktop\TSM\file-storage\file-storage
