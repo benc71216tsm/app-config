@@ -21,7 +21,6 @@ mqtt:
   username: ${MQTT_USERNAME}
   password: ${MQTT_PASSWORD}
     
-    
 interpreter-service:
   name: ${K3I_NAME}
   url: ${K3I_URL}
