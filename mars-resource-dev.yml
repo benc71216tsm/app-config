@@ -69,3 +69,7 @@ redis:
 logging:
   pattern:
     level: "%5p [${spring.application.name:},%X{traceId:-},%X{spanId:-}]"
+
+user-service:
+  name: mars-userm
+  url: http://localhost:8083
