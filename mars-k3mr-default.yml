@@ -1,0 +1,30 @@
+server:
+  port: 9806
+  servlet:
+    context-path: /api/v1/
+
+spring:
+  timezone: UTC+08:00
+  application:
+    name: mars-k3mr
+
+eureka:
+  client:
+    service-url:
+      defaultZone: ${EUREKA_CLIENT_SERVICEURL_DEFAULTZONE}   
+
+mqtt:
+  client:
+    id: ${MQTT_CLIENT_ID}
+  broker:
+    url: tcp://${MQTT_HOSTNAME}:1883
+  username: ${MQTT_USERNAME}
+  password: ${MQTT_PASSWORD}
+    
+    
+interpreter-service:
+  name: ${K3I_NAME}
+  url: ${K3I_URL}
+  
+logging:
+  config: "classpath:log4j2-${PROFILE}.xml"
