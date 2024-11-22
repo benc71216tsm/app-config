@@ -5,6 +5,11 @@ server:
 
 spring:
   timezone: UTC+08:00
+  servlet:
+    multipart:
+        max-file-size: 10MB
+        max-request-size: 2MB
+        resolve-lazily: false
   application:
     name: mars-resource
   datasource:
@@ -73,3 +78,6 @@ logging:
 user-service:
   name: mars-userm
   url: http://localhost:8083
+
+file-storage:
+    path: /tmp/file-storage
