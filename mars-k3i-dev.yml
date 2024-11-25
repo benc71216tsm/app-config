@@ -29,13 +29,13 @@ kafka:
   consumer:
     enabled: true
     group-id: mars_k3i
-    topic: com.mars.k3.msg
+    topic: com.mars.msg.k3
     key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
     value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
     auto-offset-reset: latest
   producer:
     enabled: true
-    topic: com.mars.k3.msg
+    topic: com.mars.msg.k3
     key-serializer: org.apache.kafka.common.serialization.StringSerializer
     value-serializer: org.apache.kafka.common.serialization.StringSerializer
     retries: 0
