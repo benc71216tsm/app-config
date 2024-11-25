@@ -80,5 +80,9 @@ user-service:
   name: mars-userm
   url: http://localhost:8083
 
+gateway-service:
+  name: mars-gateway
+  url: http://localhost:8080
+
 file-storage:
     path: C:\Users\Cheong KP\Desktop\TSM\file-storage
