@@ -69,7 +69,14 @@ redis:
 logging:
   pattern:
     level: "%5p [${spring.application.name:},%X{traceId:-},%X{spanId:-}]"
-    
+
 user-service:
   name: ${USERM_NAME}
   url: ${USERM_HOSTNAME_URL}
+
+gateway-service:
+  name: ${GATEWAY_NAME}
+  url: ${GATEWAY_HOSTNAME_URL}
+
+file-storage:
+    path: ${RESOURCE_PATH}
