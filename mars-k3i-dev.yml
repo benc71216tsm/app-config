@@ -17,6 +17,30 @@ redis:
   address: redis://127.0.0.1:6379  # Redis server address with redis:// protocol
   password: chubb@RE@20
   database: 2                      # Default Redis database index
+  
+kafka:
+  bootstrap-servers: 127.0.0.1:9093
+  security:
+    protocol: SSL
+    ssl:
+      keystore-password: Techstore123
+      key-password: Techstore123
+      truststore-password: Techstore123
+  consumer:
+    enabled: true
+    group-id: mars_k3i
+    topics:
+      - com.mars.k3.msg
+    key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+    value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+    auto-offset-reset: latest
+  producer:
+    enabled: true
+    topics:
+      - com.mars.k3.msg
+    key-serializer: org.apache.kafka.common.serialization.StringSerializer
+    value-serializer: org.apache.kafka.common.serialization.StringSerializer
+    retries: 0
 
 logging:
   pattern:
