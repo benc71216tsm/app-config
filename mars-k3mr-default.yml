@@ -1,5 +1,5 @@
 server:
-  port: 9806
+  port: 9804
   servlet:
     context-path: /api/v1/
 
@@ -11,7 +11,7 @@ spring:
 eureka:
   client:
     service-url:
-      defaultZone: ${EUREKA_CLIENT_SERVICEURL_DEFAULTZONE}   
+      defaultZone: ${EUREKA_CLIENT_SERVICEURL_DEFAULTZONE}  
 
 mqtt:
   client:
@@ -23,7 +23,8 @@ mqtt:
     
 interpreter-service:
   name: ${K3I_NAME}
-  url: ${K3I_URL}
+  url: http://${K3I_URL}:9806
   
 logging:
-  config: "classpath:log4j2-${PROFILE}.xml"
+  pattern:
+    level: "%5p [${spring.application.name:},%X{traceId:-},%X{spanId:-}]"
