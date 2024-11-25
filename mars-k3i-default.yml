@@ -11,12 +11,34 @@ spring:
 eureka:
   client:
     service-url:
-      defaultZone: ${EUREKA_CLIENT_SERVICEURL_DEFAULTZONE}   
-      
+      defaultZone: ${EUREKA_CLIENT_SERVICEURL_DEFAULTZONE}
+
 redis:
   address: redis://${REDIS_HOSTNAME}:6379  # Redis server address with redis:// protocol
-  password: chubb@RE@20
+  password: ${REDIS_PASSWORD}
   database: 2                              # Default Redis database index
+
+kafka:
+  bootstrap-servers: ${KAFKA_SERVERS}
+  security:
+    protocol: SSL
+    ssl:
+      keystore-password: ${KAFKA_KEYSTORE_PASSWORD}
+      key-password: ${KAFKA_KEY_PASSWORD}
+      truststore-password: ${KAFKA_TRUSTSTORE_PASSWORD}
+  consumer:
+    enabled: true
+    group-id: mars_k3i
+    topic: com.mars.k3.msg
+    key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+    value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+    auto-offset-reset: latest
+  producer:
+    enabled: true
+    topic: com.mars.k3.msg
+    key-serializer: org.apache.kafka.common.serialization.StringSerializer
+    value-serializer: org.apache.kafka.common.serialization.StringSerializer
+    retries: 0
 
 logging:
   pattern:
