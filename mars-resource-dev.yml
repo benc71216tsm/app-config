@@ -86,3 +86,4 @@ gateway-service:
 
 file-storage:
     path: C:\Users\Cheong KP\Desktop\TSM\file-storage
+    allowed-extensions: pdf,txt,jpeg,jpg,png,csv

@@ -80,3 +80,4 @@ gateway-service:
 
 file-storage:
     path: ${RESOURCE_PATH}
+    allowed-extensions: ${RESOURCE_EXTENSIONS}
