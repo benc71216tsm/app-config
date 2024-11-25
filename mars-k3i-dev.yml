@@ -19,20 +19,13 @@ redis:
   database: 2                      # Default Redis database index
   
 kafka:
-  bootstrap-servers: 10.2.26.178:9093
+  bootstrap-servers: 127.0.0.1:9093
   security:
     protocol: SSL
     ssl:
       keystore-password: Techstore123
       key-password: Techstore123
       truststore-password: Techstore123
-  consumer:
-    enabled: true
-    group-id: mars_k3i
-    topic: com.mars.msg.k3
-    key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
-    value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
-    auto-offset-reset: latest
   producer:
     enabled: true
     topic: com.mars.msg.k3

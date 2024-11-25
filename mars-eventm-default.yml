@@ -1,22 +1,17 @@
 server:
-  port: 9806
+  port: 9807
   servlet:
     context-path: /api/v1/
 
 spring:
   timezone: UTC+08:00
   application:
-    name: mars-k3i
+    name: mars-eventm
 
 eureka:
   client:
     service-url:
       defaultZone: ${EUREKA_CLIENT_SERVICEURL_DEFAULTZONE}
-
-redis:
-  address: redis://${REDIS_HOSTNAME}:6379  # Redis server address with redis:// protocol
-  password: ${REDIS_PASSWORD}
-  database: 2                              # Default Redis database index
 
 kafka:
   bootstrap-servers: ${KAFKA_SERVERS}
@@ -26,12 +21,13 @@ kafka:
       keystore-password: ${KAFKA_KEYSTORE_PASSWORD}
       key-password: ${KAFKA_KEY_PASSWORD}
       truststore-password: ${KAFKA_TRUSTSTORE_PASSWORD}
-  producer:
+  consumer:
     enabled: true
-    topic: com.mars.msg.k3
-    key-serializer: org.apache.kafka.common.serialization.StringSerializer
-    value-serializer: org.apache.kafka.common.serialization.StringSerializer
-    retries: 0
+    group-id: mars_eventm
+    topic: com.mars.msg.k2,com.mars.msg.k3
+    key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+    value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+    auto-offset-reset: latest
 
 logging:
   pattern:
