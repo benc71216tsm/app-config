@@ -11,19 +11,19 @@ spring:
 eureka:
   client:
     service-url:
-      defaultZone: ${EUREKA_CLIENT_SERVICEURL_DEFAULTZONE}
+      defaultZone: http://mars-eureka:8761/eureka/
 
 mqtt:
   client:
     id: mqtt.k3mr
   broker:
-    url: tcp://${MQTT_HOSTNAME}:51883
+    url: tcp://chubb.mars-iot.cloud:51883
   username: techstore
   password: m751eLp
     
 interpreter-service:
-  name: ${K3I_NAME}
-  url: ${K3I_HOSTNAME_URL}
+  name: mars-k3i
+  url: http://mars-k3i:9806
   
 logging:
   pattern:
