@@ -1,0 +1,38 @@
+server:
+  port: 9806
+  servlet:
+    context-path: /api/v1/
+
+spring:
+  timezone: UTC+08:00
+  application:
+    name: mars-k3i
+
+eureka:
+  client:
+    service-url:
+      defaultZone: ${EUREKA_CLIENT_SERVICEURL_DEFAULTZONE}
+      
+redis:
+  address: redis://${REDIS_HOSTNAME}:6379  # Redis server address with redis:// protocol
+  password: chubb@RE@20
+  database: 2                      # Default Redis database index
+  
+kafka:
+  bootstrap-servers: ${KAFKA_SERVERS}
+  security:
+    protocol: SSL
+    ssl:
+      keystore-password: Techstore123
+      key-password: Techstore123
+      truststore-password: Techstore123
+  producer:
+    enabled: true
+    topic: com.mars.msg.k3
+    key-serializer: org.apache.kafka.common.serialization.StringSerializer
+    value-serializer: org.apache.kafka.common.serialization.StringSerializer
+    retries: 0
+
+logging:
+  pattern:
+    level: "%5p [${spring.application.name:},%X{traceId:-},%X{spanId:-}]"
