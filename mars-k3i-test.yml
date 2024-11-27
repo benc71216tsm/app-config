@@ -11,15 +11,15 @@ spring:
 eureka:
   client:
     service-url:
-      defaultZone: ${EUREKA_CLIENT_SERVICEURL_DEFAULTZONE}
+      defaultZone: http://mars-eureka:8761/eureka/
       
 redis:
-  address: redis://${REDIS_HOSTNAME}:6379  # Redis server address with redis:// protocol
+  address: redis://chubb-rds:6379  # Redis server address with redis:// protocol
   password: chubb@RE@20
   database: 2                      # Default Redis database index
   
 kafka:
-  bootstrap-servers: ${KAFKA_SERVERS}
+  bootstrap-servers: mars-akb:9093
   security:
     protocol: SSL
     ssl:
