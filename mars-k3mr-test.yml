@@ -1,0 +1,30 @@
+server:
+  port: 9804
+  servlet:
+    context-path: /api/v1/
+
+spring:
+  timezone: UTC+08:00
+  application:
+    name: mars-k3mr
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://mars-eureka:8761/eureka/
+
+mqtt:
+  client:
+    id: mqtt.k3mr
+  broker:
+    url: tcp://chubb.mars-iot.cloud:51883
+  username: techstore
+  password: m751eLp
+    
+interpreter-service:
+  name: mars-k3i
+  url: http://mars-k3i:9806
+  
+logging:
+  pattern:
+    level: "%5p [${spring.application.name:},%X{traceId:-},%X{spanId:-}]"
