@@ -11,7 +11,7 @@ spring:
 jwt:
   auth:
     secret: UUtvOYvp9YHz/kQpTYTimW52hefnIW5eh49gnJHZqp4=
-    expiration: 600000 # Access token lifespan (10 min)
+    expiration: 86400000 # Access token lifespan (24 hours)
     refreshExpiration: 86400000 # Refresh token lifespan (24 hours)
 
 eureka:
