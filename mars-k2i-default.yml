@@ -28,7 +28,7 @@ kafka:
     value-serializer: org.apache.kafka.common.serialization.StringSerializer
     retries: 0
     
-interpreter-service:
+reply-service:
   name: ${K2EH_NAME}
   url: http://${K2EH_URL}:9802
 

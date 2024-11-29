@@ -21,7 +21,7 @@ netty:
   keep-alive: true
   client-timeout: 20
     
-interpreter-service:
+reply-service:
   name: mars-k2i
   url: http://localhost:9803
   
