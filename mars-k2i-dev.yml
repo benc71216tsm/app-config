@@ -28,7 +28,7 @@ kafka:
     value-serializer: org.apache.kafka.common.serialization.StringSerializer
     retries: 0
     
-interpreter-service:
+reply-service:
   name: mars-k2eh
   url: http://localhost:9802
 
