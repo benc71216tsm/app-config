@@ -1,0 +1,37 @@
+server:
+  port: 9803
+  servlet:
+    context-path: /api/v1/
+
+spring:
+  timezone: UTC+08:00
+  application:
+    name: mars-k2i
+
+eureka:
+  client:
+    service-url:
+      defaultZone: ${EUREKA_CLIENT_SERVICEURL_DEFAULTZONE}
+
+kafka:
+  bootstrap-servers: ${KAFKA_SERVERS}
+  security:
+    protocol: SSL
+    ssl:
+      keystore-password: ${KAFKA_KEYSTORE_PASSWORD}
+      key-password: ${KAFKA_KEY_PASSWORD}
+      truststore-password: ${KAFKA_TRUSTSTORE_PASSWORD}
+  producer:
+    enabled: true
+    topic: com.mars.msg.k3
+    key-serializer: org.apache.kafka.common.serialization.StringSerializer
+    value-serializer: org.apache.kafka.common.serialization.StringSerializer
+    retries: 0
+    
+reply-service:
+  name: ${K2EH_NAME}
+  url: http://${K2EH_URL}:9802
+
+logging:
+  pattern:
+    level: "%5p [${spring.application.name:},%X{traceId:-},%X{spanId:-}]"
