@@ -43,6 +43,11 @@ spring:
             lob:
               non_contextual_creation: true
             batch_size: 30
+
+socket-server:
+    port: 8101
+    host: 0.0.0.0
+
 jwt:
   auth:
     secret: UUtvOYvp9YHz/kQpTYTimW52hefnIW5eh49gnJHZqp4=
