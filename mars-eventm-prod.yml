@@ -50,6 +50,11 @@ spring:
     jpa:
       repositories:
         enabled: true
+
+socket-server:
+    port: ${SOCKET_PORT}
+    host: ${SOCKET_HOST}
+    
 jwt:
   auth:
     secret: UUtvOYvp9YHz/kQpTYTimW52hefnIW5eh49gnJHZqp4=
