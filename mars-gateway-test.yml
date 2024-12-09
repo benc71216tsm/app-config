@@ -41,3 +41,6 @@ management:
     web:
       exposure:
         include: "*"
+
+socket-io:
+  gateway: ${SOCKET_IO_GATEWAY}
