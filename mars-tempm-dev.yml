@@ -62,7 +62,7 @@ eureka:
       defaultZone: http://mars-eureka:8761/eureka/ 
     
 redis:
-  address: redis://chubb-rds:6379    # Redis server address with redis:// protocol
+  address: redis://mars-rds:6379    # Redis server address with redis:// protocol
   password: chubb@RE@20
   database: 2                       # Default Redis database index
 
