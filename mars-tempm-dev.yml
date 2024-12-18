@@ -59,10 +59,10 @@ jwt:
 eureka:
   client:
     service-url:
-      defaultZone: http://localhost:8761/eureka/
+      defaultZone: http://mars-eureka:8761/eureka/ 
     
 redis:
-  address: redis://127.0.0.1:6379    # Redis server address with redis:// protocol
+  address: redis://chubb-rds:6379    # Redis server address with redis:// protocol
   password: chubb@RE@20
   database: 2                       # Default Redis database index
 
