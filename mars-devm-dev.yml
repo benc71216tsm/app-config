@@ -38,7 +38,10 @@ spring:
         ddl-auto: update
       properties:
         hibernate:
-          default_batch_fetch_size: 50
+          cache:
+            use_second_level_cache: true
+            use_query_cache: true
+            region.factory_class: org.hibernate.cache.jcache.JCacheRegionFactory
           dialect: org.hibernate.dialect.MariaDBDialect
           jdbc:
             time_zone: UTC+08:00
