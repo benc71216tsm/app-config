@@ -11,7 +11,7 @@ spring:
     type: com.alibaba.druid.pool.DruidDataSource
     druid:
       driver-class-name: org.mariadb.jdbc.Driver
-      url: jdbc:mariadb://127.0.0.1:4006/chubbdb?useUnicode=true&useSSL=false&allowPublicKeyRetrieval=true&characterEncoding=utf8&cachePrepStmts=true&useServerPrepStmts=true&rewriteBatchedStatements=true&serverTimezone=Asia/Singapore
+      url: jdbc:mariadb://chubb-maxscale:4006/chubbdb?useUnicode=true&useSSL=false&allowPublicKeyRetrieval=true&characterEncoding=utf8&cachePrepStmts=true&useServerPrepStmts=true&rewriteBatchedStatements=true&serverTimezone=Asia/Singapore
       username: maxpato
       password: maxpat0pwDD
       initial-size: 10
@@ -53,18 +53,22 @@ spring:
 jwt:
   auth:
     secret: UUtvOYvp9YHz/kQpTYTimW52hefnIW5eh49gnJHZqp4=
-    expiration: 300000 # Access token lifespan (5 min)
+    expiration: 86400000 # Access token lifespan (24 hours)
     refreshExpiration: 86400000 # Refresh token lifespan (24 hours)
 
 eureka:
   client:
     service-url:
-      defaultZone: http://localhost:8761/eureka/ 
+      defaultZone: http://mars-eureka:8761/eureka/ 
     
 redis:
-  address: redis://127.0.0.1:6379    # Redis server address with redis:// protocol
+  address: redis://chubb-rds:6379    # Redis server address with redis:// protocol
   password: chubb@RE@20
   database: 2                       # Default Redis database index
+  
+template-service:
+  name: mars-tempm
+  url: http://mars-tempm:9808
 
 logging:
   pattern:
