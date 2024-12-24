@@ -29,6 +29,7 @@ spring:
       remove-abandoned: true      # Enable the removal of abandoned connections
       remove-abandoned-timeout: 180 # Time (in seconds) before a connection is considered abandoned
       log-abandoned: true         # Log details of abandoned connections
+      filters: stat
     jpa:
       database: mariadb
       database-platform: org.hibernate.dialect.MariaDBDialect
@@ -37,12 +38,16 @@ spring:
         ddl-auto: update
       properties:
         hibernate:
+          cache:
+            use_second_level_cache: true
+            use_query_cache: true
+            region.factory_class: org.hibernate.cache.jcache.JCacheRegionFactory
           dialect: org.hibernate.dialect.MariaDBDialect
           jdbc:
             time_zone: UTC+08:00
             lob:
               non_contextual_creation: true
-            batch_size: 30
+            batch_size: 50
   data:
     redis:
       repositories:
