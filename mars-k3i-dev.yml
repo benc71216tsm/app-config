@@ -11,15 +11,15 @@ spring:
 eureka:
   client:
     service-url:
-      defaultZone: http://10.2.26.178:8761/eureka/ 
+      defaultZone: http://localhost:8761/eureka/ 
       
 redis:
-  address: redis://10.2.26.178:6379  # Redis server address with redis:// protocol
+  address: redis://localhost:6379  # Redis server address with redis:// protocol
   password: chubb@RE@20
   database: 2                      # Default Redis database index
   
 kafka:
-  bootstrap-servers: 10.2.26.178:9093
+  bootstrap-servers: localhost:9093
   security:
     protocol: SSL
     ssl:
