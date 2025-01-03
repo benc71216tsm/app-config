@@ -19,7 +19,7 @@ redis:
   database: 2                      # Default Redis database index
   
 kafka:
-  bootstrap-servers: localhost:9093
+  bootstrap-servers: 127.0.0.1:9093
   security:
     protocol: SSL
     ssl:
