@@ -32,6 +32,14 @@ kafka:
     key-serializer: org.apache.kafka.common.serialization.StringSerializer
     value-serializer: org.apache.kafka.common.serialization.StringSerializer
     retries: 0
+    
+device-service:
+  name: ${TEMPM_NAME}
+  url: http://${TEMPM_URL}:8085
+  
+template-service:
+  name: ${TEMPM_NAME}
+  url: http://${TEMPM_URL}:9808
 
 logging:
   pattern:

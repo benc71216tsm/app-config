@@ -32,6 +32,14 @@ kafka:
     key-serializer: org.apache.kafka.common.serialization.StringSerializer
     value-serializer: org.apache.kafka.common.serialization.StringSerializer
     retries: 0
+    
+device-service:
+  name: mars-devm
+  url: http://localhost:8085
+  
+template-service:
+  name: mars-tempm
+  url: http://localhost:9808
 
 logging:
   pattern:

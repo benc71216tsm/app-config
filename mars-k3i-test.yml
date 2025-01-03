@@ -33,6 +33,14 @@ kafka:
     value-serializer: org.apache.kafka.common.serialization.StringSerializer
     retries: 0
 
+device-service:
+  name: mars-devm
+  url: http://mars-devm:8085
+  
+template-service:
+  name: mars-tempm
+  url: http://mars-tempm:9808
+
 logging:
   pattern:
     level: "%5p [${spring.application.name:},%X{traceId:-},%X{spanId:-}]"
