@@ -65,6 +65,10 @@ redis:
   address: redis://chubb-rds:6379    # Redis server address with redis:// protocol
   password: chubb@RE@20
   database: 2                       # Default Redis database index
+  
+template-service:
+  name: mars-tempm
+  url: http://mars-tempm:9808
 
 logging:
   pattern:
