@@ -34,8 +34,8 @@ kafka:
     retries: 0
     
 device-service:
-  name: ${TEMPM_NAME}
-  url: http://${TEMPM_URL}:8085
+  name: ${DEVM_NAME}
+  url: http://${DEVM_URL}:8085
   
 template-service:
   name: ${TEMPM_NAME}
