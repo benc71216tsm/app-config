@@ -1,17 +1,17 @@
 server:
-  port: 9807
+  port: 9810
   servlet:
     context-path: /api/v1/
 
 spring:
   timezone: UTC+08:00
   application:
-    name: mars-eventm
+    name: mars-casem
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
     druid:
       driver-class-name: org.mariadb.jdbc.Driver
-      url: jdbc:mariadb://127.0.0.1:4006/chubbdb?useUnicode=true&useSSL=false&allowPublicKeyRetrieval=true&characterEncoding=utf8&cachePrepStmts=true&useServerPrepStmts=true&rewriteBatchedStatements=true&serverTimezone=Asia/Singapore
+      url: jdbc:mariadb://${MAXSCALE_HOSTNAME}:4006/chubbdb?useUnicode=true&useSSL=false&allowPublicKeyRetrieval=true&characterEncoding=utf8&cachePrepStmts=true&useServerPrepStmts=true&rewriteBatchedStatements=true&serverTimezone=Asia/Singapore
       username: maxpato
       password: maxpat0pwDD
       initial-size: 10
@@ -43,43 +43,45 @@ spring:
             lob:
               non_contextual_creation: true
             batch_size: 30
-
-socket-server:
-    port: 8101
-    host: 0.0.0.0
-
+  data:
+    redis:
+      repositories:
+        enabled: false
+    jpa:
+      repositories:
+        enabled: true
 jwt:
   auth:
     secret: UUtvOYvp9YHz/kQpTYTimW52hefnIW5eh49gnJHZqp4=
     expiration: 300000 # Access token lifespan (5 min)
     refreshExpiration: 86400000 # Refresh token lifespan (24 hours)
-    
+
 eureka:
   client:
     service-url:
-      defaultZone: http://localhost:8761/eureka/ 
+      defaultZone: ${EUREKA_CLIENT_SERVICEURL_DEFAULTZONE}
 
 kafka:
-  bootstrap-servers: 127.0.0.1:9093
+  bootstrap-servers: ${KAFKA_SERVERS}
   security:
     protocol: SSL
     ssl:
-      keystore-password: Techstore123
-      key-password: Techstore123
-      truststore-password: Techstore123
+      keystore-password: ${KAFKA_KEYSTORE_PASSWORD}
+      key-password: ${KAFKA_KEY_PASSWORD}
+      truststore-password: ${KAFKA_TRUSTSTORE_PASSWORD}
   consumer:
     enabled: true
-    group-id: mars_eventm
+    group-id: mars_casem
     topic: com.mars.msg.k2,com.mars.msg.k3
     key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
     value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
     auto-offset-reset: latest
-
+    
 redis:
-  address: redis://127.0.0.1:6379     # Redis server address with redis:// protocol
+  address: redis://${REDIS_HOSTNAME}:6379    # Redis server address with redis:// protocol
   password: chubb@RE@20
   database: 2                       # Default Redis database index
-  
+
 logging:
   pattern:
     level: "%5p [${spring.application.name:},%X{traceId:-},%X{spanId:-}]"

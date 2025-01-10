@@ -1,12 +1,12 @@
 server:
-  port: 9807
+  port: 9810
   servlet:
     context-path: /api/v1/
 
 spring:
   timezone: UTC+08:00
   application:
-    name: mars-eventm
+    name: mars-casem
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
     druid:
@@ -43,21 +43,23 @@ spring:
             lob:
               non_contextual_creation: true
             batch_size: 30
-
-socket-server:
-    port: 8101
-    host: 0.0.0.0
-
+  data:
+    redis:
+      repositories:
+        enabled: false
+    jpa:
+      repositories:
+        enabled: true
 jwt:
   auth:
     secret: UUtvOYvp9YHz/kQpTYTimW52hefnIW5eh49gnJHZqp4=
     expiration: 300000 # Access token lifespan (5 min)
     refreshExpiration: 86400000 # Refresh token lifespan (24 hours)
-    
+
 eureka:
   client:
     service-url:
-      defaultZone: http://localhost:8761/eureka/ 
+      defaultZone: http://localhost:8761/eureka/
 
 kafka:
   bootstrap-servers: 127.0.0.1:9093
@@ -69,17 +71,17 @@ kafka:
       truststore-password: Techstore123
   consumer:
     enabled: true
-    group-id: mars_eventm
+    group-id: mars_casem
     topic: com.mars.msg.k2,com.mars.msg.k3
     key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
     value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
     auto-offset-reset: latest
-
+    
 redis:
-  address: redis://127.0.0.1:6379     # Redis server address with redis:// protocol
+  address:  redis://127.0.0.1:6379    # Redis server address with redis:// protocol
   password: chubb@RE@20
   database: 2                       # Default Redis database index
-  
+
 logging:
   pattern:
     level: "%5p [${spring.application.name:},%X{traceId:-},%X{spanId:-}]"
