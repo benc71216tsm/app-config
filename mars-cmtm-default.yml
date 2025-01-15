@@ -1,0 +1,66 @@
+server:
+  port: 9811
+  servlet:
+    context-path: /api/v1/
+
+spring:
+  timezone: UTC+08:00
+  application:
+    name: mars-cmtm
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    druid:
+      driver-class-name: org.mariadb.jdbc.Driver
+      url: jdbc:mariadb://${MAXSCALE_HOSTNAME}:4006/chubbdb?useUnicode=true&useSSL=false&allowPublicKeyRetrieval=true&characterEncoding=utf8&cachePrepStmts=true&useServerPrepStmts=true&rewriteBatchedStatements=true&serverTimezone=Asia/Singapore
+      username: maxpato
+      password: maxpat0pwDD
+      initial-size: 10
+      min-idle: 5
+      max-active: 50
+      max-wait: 60000
+      time-between-eviction-runs-millis: 30000
+      min-evictable-idle-time-millis: 300000
+      validation-query: select '1'
+      validation-query-timeout: 60000
+      test-while-idle: true
+      test-on-borrow: true
+      test-on-return: false
+      max-lifetime: 1800000      # Maximum lifetime of a connection (in milliseconds)
+      remove-abandoned: true      # Enable the removal of abandoned connections
+      remove-abandoned-timeout: 180 # Time (in seconds) before a connection is considered abandoned
+      log-abandoned: true         # Log details of abandoned connections
+    jpa:
+      database: mariadb
+      database-platform: org.hibernate.dialect.MariaDBDialect
+      show-sql: true
+      hibernate:
+        ddl-auto: update
+      properties:
+        hibernate:
+          dialect: org.hibernate.dialect.MariaDBDialect
+          jdbc:
+            time_zone: UTC+08:00
+            lob:
+              non_contextual_creation: true
+            batch_size: 30
+  data:
+    redis:
+      repositories:
+        enabled: false
+    jpa:
+      repositories:
+        enabled: true
+jwt:
+  auth:
+    secret: UUtvOYvp9YHz/kQpTYTimW52hefnIW5eh49gnJHZqp4=
+    expiration: 300000 # Access token lifespan (5 min)
+    refreshExpiration: 86400000 # Refresh token lifespan (24 hours)
+
+eureka:
+  client:
+    service-url:
+      defaultZone: ${EUREKA_CLIENT_SERVICEURL_DEFAULTZONE}
+
+logging:
+  pattern:
+    level: "%5p [${spring.application.name:},%X{traceId:-},%X{spanId:-}]"
