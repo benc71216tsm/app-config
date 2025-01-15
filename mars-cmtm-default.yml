@@ -60,6 +60,11 @@ eureka:
   client:
     service-url:
       defaultZone: ${EUREKA_CLIENT_SERVICEURL_DEFAULTZONE}
+      
+redis:
+  address: redis://${REDIS_HOSTNAME}:6379    # Redis server address with redis:// protocol
+  password: chubb@RE@20
+  database: 2                       # Default Redis database index
 
 logging:
   pattern:
