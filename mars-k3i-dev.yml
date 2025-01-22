@@ -35,11 +35,11 @@ kafka:
     
 device-service:
   name: mars-devm
-  url: http://10.2.26.178:8085
+  url: http://localhost:8085
   
 template-service:
   name: mars-tempm
-  url: http://10.2.26.178:9808
+  url: http://localhost:9808
 
 logging:
   pattern:

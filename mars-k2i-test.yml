@@ -11,15 +11,15 @@ spring:
 eureka:
   client:
     service-url:
-      defaultZone: http://localhost:8761/eureka/ 
+      defaultZone: http://mars-eureka:8761/eureka/
       
 redis:
-  address: redis://localhost:6379  # Redis server address with redis:// protocol
+  address: redis://chubb-rds:6379  # Redis server address with redis:// protocol
   password: chubb@RE@20
   database: 2                      # Default Redis database index
 
 kafka:
-  bootstrap-servers: 127.0.0.1:9093
+  bootstrap-servers: mars-akb:9093
   security:
     protocol: SSL
     ssl:
@@ -35,15 +35,15 @@ kafka:
     
 device-service:
   name: mars-devm
-  url: http://localhost:8085
+  url: http://mars-devm:8085
   
 template-service:
   name: mars-tempm
-  url: http://localhost:9808
-    
+  url: http://mars-tempm:9808
+ 
 sender-service:
   name: mars-k2eh
-  url: http://localhost:9802
+  url: http://mars-k2eh:9802
 
 logging:
   pattern:

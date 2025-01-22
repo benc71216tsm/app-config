@@ -13,6 +13,11 @@ eureka:
     service-url:
       defaultZone: ${EUREKA_CLIENT_SERVICEURL_DEFAULTZONE}
 
+redis:
+  address: redis://${REDIS_HOSTNAME}:6379  # Redis server address with redis:// protocol
+  password: ${REDIS_PASSWORD}
+  database: 2                              # Default Redis database index
+
 kafka:
   bootstrap-servers: ${KAFKA_SERVERS}
   security:
@@ -27,7 +32,15 @@ kafka:
     key-serializer: org.apache.kafka.common.serialization.StringSerializer
     value-serializer: org.apache.kafka.common.serialization.StringSerializer
     retries: 0
-    
+
+device-service:
+  name: ${DEVM_NAME}
+  url: http://${DEVM_URL}:8085
+  
+template-service:
+  name: ${TEMPM_NAME}
+  url: http://${TEMPM_URL}:9808
+
 sender-service:
   name: ${K2EH_NAME}
   url: http://${K2EH_URL}:9802

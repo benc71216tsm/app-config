@@ -1,0 +1,30 @@
+server:
+  port: 9802
+  servlet:
+    context-path: /api/v1/
+
+spring:
+  timezone: UTC+08:00
+  application:
+    name: mars-k2eh
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://mars-eureka:8761/eureka/
+
+netty:
+  port: 4440
+  boss-count: 1
+  worker-count: 8
+  backlog: 2000
+  keep-alive: true
+  client-timeout: 20
+    
+interpreter-service:
+  name: mars-k2i
+  url: http://mars-k2i:9803
+  
+logging:
+  pattern:
+    level: "%5p [${spring.application.name:},%X{traceId:-},%X{spanId:-}]"
