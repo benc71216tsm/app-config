@@ -41,6 +41,10 @@ template-service:
   name: mars-tempm
   url: http://localhost:9808
 
+sender-service:
+  name: mars-k3ms
+  url: http://localhost:9805
+
 logging:
   pattern:
     level: "%5p [${spring.application.name:},%X{traceId:-},%X{spanId:-}]"

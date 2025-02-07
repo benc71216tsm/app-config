@@ -40,6 +40,10 @@ device-service:
 template-service:
   name: ${TEMPM_NAME}
   url: http://${TEMPM_URL}:9808
+  
+sender-service:
+  name: ${K3MS_NAME}
+  url: http://${K3MS_URL}:9805
 
 logging:
   pattern:
