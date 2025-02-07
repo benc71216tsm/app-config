@@ -1,0 +1,26 @@
+server:
+  port: 9805
+  servlet:
+    context-path: /api/v1/
+
+spring:
+  timezone: UTC+08:00
+  application:
+    name: mars-k3ms
+
+eureka:
+  client:
+    service-url:
+      defaultZone: ${EUREKA_CLIENT_SERVICEURL_DEFAULTZONE}  
+
+mqtt:
+  client:
+    id: ${MQTT_CLIENT_ID}
+  broker:
+    url: tcp://${MQTT_HOSTNAME}:1883
+  username: ${MQTT_USERNAME}
+  password: ${MQTT_PASSWORD}
+  
+logging:
+  pattern:
+    level: "%5p [${spring.application.name:},%X{traceId:-},%X{spanId:-}]"
