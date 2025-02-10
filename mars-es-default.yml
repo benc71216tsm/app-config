@@ -1,12 +1,12 @@
 server:
-  port: 8083
+  port: 8086
   servlet:
     context-path: /api/v1/
 
 spring:
   timezone: UTC+08:00
   application:
-    name: mars-userm
+    name: mars-es
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
     druid:
@@ -50,17 +50,32 @@ spring:
     jpa:
       repositories:
         enabled: true
+  mail:
+    host: ${MAIL_HOST}
+    port: ${MAIL_PORT}
+    username: ${MAIL_USERNAME}
+    password: ${MAIL_PASSWORD}
+    from: ${MAIL_FROM}
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+          ssl:
+            enable: true
+
 jwt:
   auth:
     secret: UUtvOYvp9YHz/kQpTYTimW52hefnIW5eh49gnJHZqp4=
-    expiration: 86400000 # Access token lifespan (24 hours)
+    expiration: 300000 # Access token lifespan (5 min)
     refreshExpiration: 86400000 # Refresh token lifespan (24 hours)
 
 eureka:
   client:
     service-url:
       defaultZone: ${EUREKA_CLIENT_SERVICEURL_DEFAULTZONE}
-      
+    
 redis:
   address: redis://${REDIS_HOSTNAME}:6379    # Redis server address with redis:// protocol
   password: chubb@RE@20
@@ -69,7 +84,3 @@ redis:
 logging:
   pattern:
     level: "%5p [${spring.application.name:},%X{traceId:-},%X{spanId:-}]"
-
-es-service:
-  name: ${ES_NAME}
-  url: ${ES_HOSTNAME_URL}
