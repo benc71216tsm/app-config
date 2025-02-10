@@ -1,19 +1,19 @@
 server:
-  port: 9808
+  port: 9999
   servlet:
     context-path: /api/v1/
 
 spring:
   timezone: UTC+08:00
   application:
-    name: mars-tempm
+    name: mars-backupm
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
     druid:
       driver-class-name: org.mariadb.jdbc.Driver
-      url: jdbc:mariadb://127.0.0.1:3306/chubb?useUnicode=true&useSSL=false&allowPublicKeyRetrieval=true&characterEncoding=utf8&cachePrepStmts=true&useServerPrepStmts=true&rewriteBatchedStatements=true&serverTimezone=Asia/Singapore
-      username: root        
-      password: yaom3ka4
+      url: jdbc:mariadb://${MAXSCALE_HOSTNAME}:4006/chubbdb?useUnicode=true&useSSL=false&allowPublicKeyRetrieval=true&characterEncoding=utf8&cachePrepStmts=true&useServerPrepStmts=true&rewriteBatchedStatements=true&serverTimezone=Asia/Singapore
+      username: maxpato
+      password: maxpat0pwDD
       initial-size: 10
       min-idle: 5
       max-active: 50
@@ -59,10 +59,10 @@ jwt:
 eureka:
   client:
     service-url:
-      defaultZone: http://localhost:8761/eureka/ 
+      defaultZone: ${EUREKA_CLIENT_SERVICEURL_DEFAULTZONE}
     
 redis:
-  address: redis://127.0.0.1:6379    # Redis server address with redis:// protocol
+  address: redis://${REDIS_HOSTNAME}:6379    # Redis server address with redis:// protocol
   password: chubb@RE@20
   database: 2                       # Default Redis database index
 

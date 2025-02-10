@@ -34,12 +34,16 @@ kafka:
     retries: 0
     
 device-service:
-  name: ${TEMPM_NAME}
-  url: http://${TEMPM_URL}:8085
+  name: ${DEVM_NAME}
+  url: http://${DEVM_URL}:8085
   
 template-service:
   name: ${TEMPM_NAME}
   url: http://${TEMPM_URL}:9808
+  
+sender-service:
+  name: ${K3MS_NAME}
+  url: http://${K3MS_URL}:9805
 
 logging:
   pattern:
