@@ -84,3 +84,7 @@ mail:
 logging:
   pattern:
     level: "%5p [${spring.application.name:},%X{traceId:-},%X{spanId:-}]"
+    
+es-service:
+  name: mars-es
+  url: http://localhost:8086
