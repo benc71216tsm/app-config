@@ -1,0 +1,37 @@
+server:
+  port: 9820
+  servlet:
+    context-path: /api/v1/
+
+spring:
+  timezone: UTC+08:00
+  application:
+    name: mars-smsr
+        
+camel:
+  component:
+    enabled: true
+    smpp:
+      configuration:
+        url: "smpp://{{camel.component.smpp.configuration.system-id}}@{{camel.component.smpp.configuration.host}}:{{camel.component.smpp.configuration.port}}?password={{camel.component.smpp.configuration.password}}&enquireLinkTimer=3000&transactionTimer=5000&systemType=consumer"
+        host: ${SMPP_HOST}
+        port: ${SMPP_PORT}
+        password: ${SMPP_PASSWORD}
+        system-id: ${SMPP_SYSTEM_ID}
+        source-address: ${SMPP_SOURCE_ADDRESS}
+        source-addr-ton: 0x05
+        source-addr-npi: 0x01
+        dest-addr-npi: 0x01
+        dest-addr-ton: 0x01
+        registered-delivery: 1
+    bean:
+      scope: singleton
+
+eureka:
+  client:
+    service-url:
+      defaultZone: ${EUREKA_CLIENT_SERVICEURL_DEFAULTZONE}
+
+logging:
+  pattern:
+    level: "%5p [${spring.application.name:},%X{traceId:-},%X{spanId:-}]"
