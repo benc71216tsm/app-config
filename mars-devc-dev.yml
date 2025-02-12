@@ -62,7 +62,7 @@ k3-interpreter-service:
   name: mars-k3i
   url: http://localhost:9806
   
-smsi-interpreter-service:
+sms-interpreter-service:
   name: mars-smsi
   url: http://localhost:9822
 

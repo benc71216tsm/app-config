@@ -62,7 +62,7 @@ k3-interpreter-service:
   name: ${K3I_NAME}
   url: http://${K3I_URL}:9806
   
-smsi-interpreter-service:
+sms-interpreter-service:
   name: ${SMSI_NAME}
   url: http://${SMSI_URL}:9822
 
