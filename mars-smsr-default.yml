@@ -10,7 +10,6 @@ spring:
         
 camel:
   component:
-    enabled: true
     smpp:
       configuration:
         url: "smpp://{{camel.component.smpp.configuration.system-id}}@{{camel.component.smpp.configuration.host}}:{{camel.component.smpp.configuration.port}}?password={{camel.component.smpp.configuration.password}}&enquireLinkTimer=3000&transactionTimer=5000&systemType=consumer"
@@ -31,6 +30,10 @@ eureka:
   client:
     service-url:
       defaultZone: ${EUREKA_CLIENT_SERVICEURL_DEFAULTZONE}
+      
+interpreter-service:
+  name: ${SMSI_NAME}
+  url: http://${SMSI_URL}:9822
 
 logging:
   pattern:

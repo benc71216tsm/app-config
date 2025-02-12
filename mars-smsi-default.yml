@@ -1,0 +1,27 @@
+server:
+  port: 9822
+  servlet:
+    context-path: /api/v1/
+
+spring:
+  timezone: UTC+08:00
+  application:
+    name: mars-smsi
+
+eureka:
+  client:
+    service-url:
+      defaultZone: ${EUREKA_CLIENT_SERVICEURL_DEFAULTZONE}
+      
+redis:
+  address: redis://${REDIS_HOSTNAME}:6379  # Redis server address with redis:// protocol
+  password: ${REDIS_PASSWORD}
+  database: 2                              # Default Redis database index
+  
+sender-service:
+  name: ${SMSS_NAME}
+  url: http://${SMSS_URL}:9821
+
+logging:
+  pattern:
+    level: "%5p [${spring.application.name:},%X{traceId:-},%X{spanId:-}]"
