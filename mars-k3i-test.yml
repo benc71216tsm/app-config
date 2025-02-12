@@ -11,7 +11,7 @@ spring:
     type: com.alibaba.druid.pool.DruidDataSource
     druid:
       driver-class-name: org.mariadb.jdbc.Driver
-      url: jdbc:mariadb://chubb-maxscale:4006/chubbdb?useUnicode=true&useSSL=false&allowPublicKeyRetrieval=true&characterEncoding=utf8&cachePrepStmts=true&useServerPrepStmts=true&rewriteBatchedStatements=true&serverTimezone=Asia/Singapore
+      url: jdbc:mariadb://${MAXSCALE_HOSTNAME}:4006/chubbdb?useUnicode=true&useSSL=false&allowPublicKeyRetrieval=true&characterEncoding=utf8&cachePrepStmts=true&useServerPrepStmts=true&rewriteBatchedStatements=true&serverTimezone=Asia/Singapore
       username: maxpato
       password: maxpat0pwDD
       initial-size: 10
@@ -43,6 +43,13 @@ spring:
             lob:
               non_contextual_creation: true
             batch_size: 30
+  data:
+    redis:
+      repositories:
+        enabled: false
+    jpa:
+      repositories:
+        enabled: true
 
 eureka:
   client:

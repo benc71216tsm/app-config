@@ -43,6 +43,13 @@ spring:
             lob:
               non_contextual_creation: true
             batch_size: 30
+  data:
+    redis:
+      repositories:
+        enabled: false
+    jpa:
+      repositories:
+        enabled: true
 
 eureka:
   client:
