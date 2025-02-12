@@ -43,3 +43,6 @@ management:
 
 socket-io:
   gateway: http://localhost:8101
+  
+soap:
+  gateway: http://localhost:8999

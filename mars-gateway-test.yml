@@ -45,3 +45,6 @@ management:
 
 socket-io:
   gateway: ${SOCKET_IO_GATEWAY}
+
+soap:
+  gateway: ${SOAP_GATEWAY}
