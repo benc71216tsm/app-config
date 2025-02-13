@@ -61,6 +61,21 @@ redis:
   password: chubb@RE@20
   database: 2                       # Default Redis database index
   
+kafka:
+  bootstrap-servers: 127.0.0.1:9093
+  security:
+    protocol: SSL
+    ssl:
+      keystore-password: Techstore123
+      key-password: Techstore123
+      truststore-password: Techstore123
+  producer:
+    enabled: true
+    topic: com.mars.msg.k2,com.mars.msg.k3
+    key-serializer: org.apache.kafka.common.serialization.StringSerializer
+    value-serializer: org.apache.kafka.common.serialization.StringSerializer
+    retries: 0
+  
 sender-service:
   name: mars-smss
   url: http://localhost:9821

@@ -61,6 +61,21 @@ redis:
   password: ${REDIS_PASSWORD}
   database: 2                              # Default Redis database index
   
+kafka:
+  bootstrap-servers: ${KAFKA_SERVERS}
+  security:
+    protocol: SSL
+    ssl:
+      keystore-password: ${KAFKA_KEYSTORE_PASSWORD}
+      key-password: ${KAFKA_KEY_PASSWORD}
+      truststore-password: ${KAFKA_TRUSTSTORE_PASSWORD}
+  producer:
+    enabled: true
+    topic: com.mars.msg.k3
+    key-serializer: org.apache.kafka.common.serialization.StringSerializer
+    value-serializer: org.apache.kafka.common.serialization.StringSerializer
+    retries: 0
+  
 sender-service:
   name: ${SMSS_NAME}
   url: http://${SMSS_URL}:9821
