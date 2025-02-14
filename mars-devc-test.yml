@@ -43,6 +43,18 @@ spring:
             lob:
               non_contextual_creation: true
             batch_size: 30
+  data:
+    redis:
+      repositories:
+        enabled: false
+    jpa:
+      repositories:
+        enabled: true
+jwt:
+  auth:
+    secret: UUtvOYvp9YHz/kQpTYTimW52hefnIW5eh49gnJHZqp4=
+    expiration: 300000 # Access token lifespan (5 min)
+    refreshExpiration: 86400000 # Refresh token lifespan (24 hours)
 
 eureka:
   client:
