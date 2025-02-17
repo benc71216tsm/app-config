@@ -23,7 +23,7 @@ spring:
       validation-query: select '1'
       validation-query-timeout: 60000
       test-while-idle: true
-      test-on-borrow: trues
+      test-on-borrow: true
       test-on-return: false
       max-lifetime: 1800000      # Maximum lifetime of a connection (in milliseconds)
       remove-abandoned: true      # Enable the removal of abandoned connections
