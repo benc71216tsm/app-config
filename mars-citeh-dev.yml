@@ -24,6 +24,14 @@ redis:
   password: chubb@RE@20
   database: 2                       # Default Redis database index
 
+dev-control-service:
+  name: mars-devc
+  url: http://localhost:9812
+  
+user-service:
+  name: mars-userm
+  url: http://localhost:8083
+  
 logging:
   pattern:
     level: "%5p [${spring.application.name:},%X{traceId:-},%X{spanId:-}]"

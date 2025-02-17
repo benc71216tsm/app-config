@@ -24,6 +24,14 @@ redis:
   password: chubb@RE@20
   database: 2                       # Default Redis database index
 
+dev-control-service:
+  name: ${DEVC_NAME}
+  url: ${DEVC_HOSTNAME_URL}
+  
+user-service:
+  name: ${USERM_NAME}
+  url: ${USERM_HOSTNAME_URL}
+  
 logging:
   pattern:
     level: "%5p [${spring.application.name:},%X{traceId:-},%X{spanId:-}]"
