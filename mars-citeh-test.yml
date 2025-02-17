@@ -31,6 +31,10 @@ dev-control-service:
 user-service:
   name: ${USERM_NAME}
   url: ${USERM_HOSTNAME_URL}
+
+devm-service:
+  name: ${DEVM_NAME}
+  url: ${DEVM_HOSTNAME_URL}
   
 logging:
   pattern:
