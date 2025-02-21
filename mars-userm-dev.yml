@@ -73,3 +73,8 @@ logging:
 es-service:
   name: mars-es
   url: http://localhost:8086
+
+javamelody:
+  enabled: true
+  monitoring-path: /monitoring
+  authorized-users: admin:password  # Optional basic auth
