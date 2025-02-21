@@ -76,5 +76,5 @@ es-service:
 
 javamelody:
   enabled: true
-  monitoring-path: /monitoring
+  monitoring-path: /api/v1/monitoring
   authorized-users: admin:password  # Optional basic auth
