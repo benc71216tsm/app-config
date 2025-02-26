@@ -6,7 +6,7 @@ server:
 spring:
   timezone: UTC+08:00
   application:
-    name: mars-devc
+    name: mars-tnc
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
     druid:
