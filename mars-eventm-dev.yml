@@ -11,6 +11,11 @@ management:
   endpoint:
     health:
       enabled: true
+  health:
+    db:
+      enabled: true  # Check MariaDB status
+    kafka:
+      enabled: true  # Check Kafka status
       
 spring:
   timezone: UTC+08:00
