@@ -12,15 +12,6 @@ management:
     health:
       enabled: true
       
-management:
-  endpoints:
-    web:
-      exposure:
-        include: health
-  endpoint:
-    health:
-      enabled: true
-      
 spring:
   timezone: UTC+08:00
   application:
