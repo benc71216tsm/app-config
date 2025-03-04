@@ -82,3 +82,7 @@ logging:
 es-service:
   name: ${ES_NAME}
   url: ${ES_HOSTNAME_URL}
+  
+resource-service:
+  name: ${RESOURCE_NAME}
+  url: ${RESOURCE_HOSTNAME_URL}
