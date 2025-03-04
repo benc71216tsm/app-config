@@ -12,15 +12,6 @@ management:
     health:
       enabled: true
       
-management:
-  endpoints:
-    web:
-      exposure:
-        include: health
-  endpoint:
-    health:
-      enabled: true
-      
 spring:
   timezone: UTC+08:00
   servlet:
@@ -103,5 +94,5 @@ gateway-service:
   url: http://localhost:8080
 
 file-storage:
-    path: C:\Users\Cheong KP\Desktop\TSM\file-storage
-    allowed-extensions: .pdf,.txt,.jpeg,.jpg,.png,.csv,.json,.sh,.apk,.ipa
+  path: C:\Users\Cheong KP\Desktop\TSM\file-storage
+  allowed-extensions: .pdf,.txt,.jpeg,.jpg,.png,.csv,.json,.sh,.apk,.ipa
