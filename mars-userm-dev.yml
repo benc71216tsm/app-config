@@ -82,3 +82,7 @@ logging:
 es-service:
   name: mars-es
   url: http://localhost:8086
+  
+resource-service:
+  name: mars-resource
+  url: http://localhost:8084
