@@ -47,3 +47,10 @@ interpreter-service:
 logging:
   pattern:
     level: "%5p [${spring.application.name:},%X{traceId:-},%X{spanId:-}]"
+    
+yeastar:
+  api:
+    host: ${YEASTAR_HOST}
+    port: ${YEASTAR_PORT} 
+    username: ${YEASTAR_USERNAME} 
+    password: ${YEASTAR_PASSWORD}
