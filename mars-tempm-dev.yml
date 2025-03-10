@@ -74,10 +74,6 @@ redis:
   address: redis://127.0.0.1:6379    # Redis server address with redis:// protocol
   password: chubb@RE@20
   database: 2                       # Default Redis database index
-
-user-service:
-  name: mars-userm
-  url: http://localhost:8083
   
 logging:
   pattern:

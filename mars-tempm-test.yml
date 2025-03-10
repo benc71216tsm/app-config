@@ -78,7 +78,3 @@ redis:
 logging:
   pattern:
     level: "%5p [${spring.application.name:},%X{traceId:-},%X{spanId:-}]"
-
-user-service:
-  name: ${USERM_NAME}
-  url: ${USERM_HOSTNAME_URL}

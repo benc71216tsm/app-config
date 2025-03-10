@@ -1,5 +1,5 @@
 server:
-  port: 9808
+  port: 9826
   servlet:
     context-path: /api/v1/
 
@@ -15,7 +15,7 @@ management:
 spring:
   timezone: UTC+08:00
   application:
-    name: mars-tempm
+    name: mars-rdm
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
     druid:
@@ -74,6 +74,10 @@ redis:
   address: redis://${REDIS_HOSTNAME}:6379    # Redis server address with redis:// protocol
   password: chubb@RE@20
   database: 2                       # Default Redis database index
+
+user-service:
+  name: ${USERM_NAME}
+  url: ${USERM_HOSTNAME_URL}
 
 logging:
   pattern:

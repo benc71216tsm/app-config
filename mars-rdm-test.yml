@@ -1,5 +1,5 @@
 server:
-  port: 9808
+  port: 9826
   servlet:
     context-path: /api/v1/
 
@@ -15,12 +15,12 @@ management:
 spring:
   timezone: UTC+08:00
   application:
-    name: mars-tempm
+    name: mars-rdm
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
     druid:
       driver-class-name: org.mariadb.jdbc.Driver
-      url: jdbc:mariadb://${MAXSCALE_HOSTNAME}:4006/chubbdb?useUnicode=true&useSSL=false&allowPublicKeyRetrieval=true&characterEncoding=utf8&cachePrepStmts=true&useServerPrepStmts=true&rewriteBatchedStatements=true&serverTimezone=Asia/Singapore
+      url: jdbc:mariadb://chubb-maxscale:4006/chubbdb?useUnicode=true&useSSL=false&allowPublicKeyRetrieval=true&characterEncoding=utf8&cachePrepStmts=true&useServerPrepStmts=true&rewriteBatchedStatements=true&serverTimezone=Asia/Singapore
       username: maxpato
       password: maxpat0pwDD
       initial-size: 10
@@ -62,19 +62,23 @@ spring:
 jwt:
   auth:
     secret: UUtvOYvp9YHz/kQpTYTimW52hefnIW5eh49gnJHZqp4=
-    expiration: 300000 # Access token lifespan (5 min)
+    expiration: 86400000 # Access token lifespan (24 hours)
     refreshExpiration: 86400000 # Refresh token lifespan (24 hours)
 
 eureka:
   client:
     service-url:
-      defaultZone: ${EUREKA_CLIENT_SERVICEURL_DEFAULTZONE}
+      defaultZone: http://mars-eureka:8761/eureka/ 
     
 redis:
-  address: redis://${REDIS_HOSTNAME}:6379    # Redis server address with redis:// protocol
+  address: redis://chubb-rds:6379    # Redis server address with redis:// protocol
   password: chubb@RE@20
   database: 2                       # Default Redis database index
 
+user-service:
+  name: mars-userm
+  url: http://mars-userm:8083
+  
 logging:
   pattern:
     level: "%5p [${spring.application.name:},%X{traceId:-},%X{spanId:-}]"
