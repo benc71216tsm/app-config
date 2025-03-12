@@ -50,3 +50,4 @@ yeastar:
     port: 5038 
     username: apiuser 
     password: apipass
+    channel: 3

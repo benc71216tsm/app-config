@@ -53,3 +53,4 @@ yeastar:
     port: ${YEASTAR_PORT} 
     username: ${YEASTAR_USERNAME} 
     password: ${YEASTAR_PASSWORD}
+    channel: ${YEASTAR_DEFAULT_CHANNEL}
