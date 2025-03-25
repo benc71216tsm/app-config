@@ -16,7 +16,7 @@ eureka:
     register-with-eureka: false
     fetchRegistry: false
     serviceUrl:
-      defaultZone: http://localhost:8761/eureka/
+      defaultZone: https://localhost:8761/eureka/
   server:
     enable-self-preservation: false
     waitTimeInMsWhenSyncEmpty: 0
