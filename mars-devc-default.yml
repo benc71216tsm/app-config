@@ -87,6 +87,23 @@ sms-interpreter-service:
   name: ${SMSI_NAME}
   url: http://${SMSI_URL}:9822
 
+kafka:
+  bootstrap-servers: 127.0.0.1:9093
+  security:
+    protocol: SSL
+    ssl:
+      keystore-password: Techstore123
+      key-password: Techstore123
+      truststore-password: Techstore123
+  consumer:
+    enabled: true
+    group-id: log-consumer-group
+    topic: logs-activity-topic
+    key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+    value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+    auto-offset-reset: earliest
+    enable-auto-commit: false
+
 logging:
   pattern:
     level: "%5p [${spring.application.name:},%X{traceId:-},%X{spanId:-}]"
