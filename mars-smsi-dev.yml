@@ -88,6 +88,11 @@ kafka:
 sender-service:
   name: mars-smss
   url: http://localhost:9821
+  
+log: 
+  scheduler:
+    test:
+       enabled: true
 
 logging:
   pattern:

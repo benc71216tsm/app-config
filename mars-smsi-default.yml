@@ -89,6 +89,11 @@ sender-service:
   name: ${SMSS_NAME}
   url: http://${SMSS_URL}:9821
 
+log: 
+  scheduler:
+    test:
+       enabled: ${log_SCHEDULER_TEST}
+       
 logging:
   pattern:
     level: "%5p [${spring.application.name:},%X{traceId:-},%X{spanId:-}]"
