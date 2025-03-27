@@ -88,13 +88,13 @@ sms-interpreter-service:
   url: http://${SMSI_URL}:9822
 
 kafka:
-  bootstrap-servers: 127.0.0.1:9093
+  bootstrap-servers: ${KAFKA_SERVERS}
   security:
     protocol: SSL
     ssl:
-      keystore-password: Techstore123
-      key-password: Techstore123
-      truststore-password: Techstore123
+      keystore-password: ${KAFKA_KEYSTORE_PASSWORD}
+      key-password: ${KAFKA_KEY_PASSWORD}
+      truststore-password: ${KAFKA_TRUSTSTORE_PASSWORD}
   consumer:
     enabled: true
     group-id: log-consumer-group

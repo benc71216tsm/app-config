@@ -86,6 +86,23 @@ k3-interpreter-service:
 sms-interpreter-service:
   name: mars-smsi
   url: http://mars-smsi:9822
+  
+kafka:
+  bootstrap-servers: ${KAFKA_SERVERS}
+  security:
+    protocol: SSL
+    ssl:
+      keystore-password: ${KAFKA_KEYSTORE_PASSWORD}
+      key-password: ${KAFKA_KEY_PASSWORD}
+      truststore-password: ${KAFKA_TRUSTSTORE_PASSWORD}
+  consumer:
+    enabled: true
+    group-id: log-consumer-group
+    topic: logs-activity-topic
+    key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+    value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+    auto-offset-reset: earliest
+    enable-auto-commit: false
 
 logging:
   pattern:
