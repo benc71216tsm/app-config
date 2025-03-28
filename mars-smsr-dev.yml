@@ -16,7 +16,15 @@ spring:
   timezone: UTC+08:00
   application:
     name: mars-smsr
-        
+  cloud:
+    openfeign:
+      compression:
+        request:
+          enabled: true
+          mime-types: text/xml,application/xml,application/json
+          min-request-size: 1024
+        response:
+          enabled: true      
 camel:
   component:
     smpp:

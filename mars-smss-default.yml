@@ -2,7 +2,10 @@ server:
   port: 9821
   servlet:
     context-path: /api/v1/
-
+  compression:
+    enabled: true
+    mime-types: application/json, application/xml, text/html, text/plain
+    min-response-size: 1024
 management:
   endpoints:
     web:
@@ -16,7 +19,15 @@ spring:
   timezone: UTC+08:00
   application:
     name: mars-smss
-        
+  cloud:
+    openfeign:
+      compression:
+        request:
+          enabled: true
+          mime-types: text/xml,application/xml,application/json
+          min-request-size: 1024
+        response:
+          enabled: true      
 camel:
   component:
     smpp:
