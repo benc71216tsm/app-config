@@ -53,6 +53,23 @@ spring:
             lob:
               non_contextual_creation: true
             batch_size: 30
+  data:
+    redis:
+      repositories:
+        enabled: false
+    jpa:
+      repositories:
+        enabled: true
+          
+  cloud:
+    openfeign:
+      compression:
+        request:
+          enabled: true
+          mime-types: text/xml,application/xml,application/json
+          min-request-size: 1024
+        response:
+          enabled: true
 
 socket-server:
     port: 8101
