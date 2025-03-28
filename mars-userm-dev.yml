@@ -93,8 +93,6 @@ redis:
 logging:
   pattern:
     level: "%5p [${spring.application.name:},%X{traceId:-},%X{spanId:-}]"
-  level:
-    org.springframework.cloud.openfeign: DEBUG
     
 es-service:
   name: mars-es
