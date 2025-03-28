@@ -16,7 +16,16 @@ spring:
   timezone: UTC+08:00
   application:
     name: mars-k3mr
-
+  cloud:
+    openfeign:
+      compression:
+        request:
+          enabled: true
+          mime-types: text/xml,application/xml,application/json
+          min-request-size: 1024
+        response:
+          enabled: true
+          
 eureka:
   client:
     service-url:
