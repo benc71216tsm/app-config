@@ -98,6 +98,10 @@ logging:
   pattern:
     level: "%5p [${spring.application.name:},%X{traceId:-},%X{spanId:-}]"
 
+devm-service:
+  name: ${DEVM_NAME}
+  url: ${DEVM_HOSTNAME_URL}
+  
 user-service:
   name: ${USERM_NAME}
   url: ${USERM_HOSTNAME_URL}
