@@ -59,6 +59,15 @@ spring:
     jpa:
       repositories:
         enabled: true
+        
+serial:
+  port:
+    name: COM5
+    baudRate: 9600
+    dataBits: 8
+    stopBits: 1
+    parity: 0
+ 
 jwt:
   auth:
     secret: UUtvOYvp9YHz/kQpTYTimW52hefnIW5eh49gnJHZqp4=

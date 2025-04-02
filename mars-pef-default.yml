@@ -59,6 +59,15 @@ spring:
     jpa:
       repositories:
         enabled: true
+        
+serial:
+  port:
+    name: ${SERIAL_PORT_NAME}
+    baudRate: ${SERIAL_PORT_BAUDRATE}
+    dataBits: ${SERIAL_PORT_DATABITS}
+    stopBits: ${SERIAL_PORT_STOPBITS}
+    parity: ${SERIAL_PORT_PARITY}
+
 jwt:
   auth:
     secret: UUtvOYvp9YHz/kQpTYTimW52hefnIW5eh49gnJHZqp4=

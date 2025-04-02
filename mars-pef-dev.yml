@@ -20,9 +20,9 @@ spring:
     type: com.alibaba.druid.pool.DruidDataSource
     druid:
       driver-class-name: org.mariadb.jdbc.Driver
-      url: jdbc:mariadb://127.0.0.1:3306/chubb?useUnicode=true&useSSL=false&allowPublicKeyRetrieval=true&characterEncoding=utf8&cachePrepStmts=true&useServerPrepStmts=true&rewriteBatchedStatements=true&serverTimezone=Asia/Singapore
-      username: root
-      password: yaom3ka4
+      url: jdbc:mariadb://127.0.0.1:4006/chubbdb?useUnicode=true&useSSL=false&allowPublicKeyRetrieval=true&characterEncoding=utf8&cachePrepStmts=true&useServerPrepStmts=true&rewriteBatchedStatements=true&serverTimezone=Asia/Singapore
+      username: maxpato
+      password: maxpat0pwDD
       initial-size: 10
       min-idle: 5
       max-active: 50
@@ -59,6 +59,15 @@ spring:
     jpa:
       repositories:
         enabled: true
+        
+serial:
+  port:
+    name: COM5
+    baudRate: 9600
+    dataBits: 8
+    stopBits: 1
+    parity: 0
+
 jwt:
   auth:
     secret: UUtvOYvp9YHz/kQpTYTimW52hefnIW5eh49gnJHZqp4=
