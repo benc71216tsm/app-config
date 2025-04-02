@@ -98,6 +98,10 @@ logging:
   pattern:
     level: "%5p [${spring.application.name:},%X{traceId:-},%X{spanId:-}]"
 
+devm-service:
+  name: mars-devm
+  url: http://localhost:8085
+
 user-service:
   name: mars-userm
   url: http://localhost:8083
