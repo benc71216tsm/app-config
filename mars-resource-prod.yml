@@ -112,4 +112,6 @@ gateway-service:
 
 file-storage:
     path: ${RESOURCE_PATH}
+    device: ${RESOURCE_PATH_DEVICE}
+    version: ${RESOURCE_PATH_VERSION}
     allowed-extensions: ${RESOURCE_EXTENSIONS}
