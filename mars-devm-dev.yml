@@ -46,7 +46,7 @@ spring:
     jpa:
       database: mariadb
       database-platform: org.hibernate.dialect.MariaDBDialect
-      show-sql: true
+      show-sql: false
       hibernate:
         ddl-auto: update
       properties:
