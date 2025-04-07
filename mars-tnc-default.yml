@@ -75,6 +75,10 @@ redis:
   password: ${REDIS_PASSWORD}
   database: 2                              # Default Redis database index
 
+resource-service:
+  name: ${RESOURCE_NAME}
+  url: http://${RESOURCE_URL}:8084
+
 logging:
   pattern:
     level: "%5p [${spring.application.name:},%X{traceId:-},%X{spanId:-}]"
