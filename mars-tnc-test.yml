@@ -1,7 +1,7 @@
 server:
   port: 8181
   servlet:
-    context-path: /api/v1/
+    context-path: /api/
 
 management:
   endpoints:
@@ -78,6 +78,11 @@ redis:
 resource-service:
   name: mars-resource
   url: http://mars-resource:8084
+  
+settings:
+  download-url: http://10.2.27.178:8181/api
+  reroute-url: 
+  reroute-required: false
 
 logging:
   pattern:
