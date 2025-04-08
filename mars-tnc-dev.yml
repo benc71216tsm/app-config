@@ -1,7 +1,7 @@
 server:
   port: 8181
   servlet:
-    context-path: /api/v1
+    context-path: /api/
 
 management:
   endpoints:
@@ -20,9 +20,9 @@ spring:
     type: com.alibaba.druid.pool.DruidDataSource
     druid:
       driver-class-name: org.mariadb.jdbc.Driver
-      url: jdbc:mariadb://10.2.26.178:4006/chubbdb?useUnicode=true&useSSL=false&allowPublicKeyRetrieval=true&characterEncoding=utf8&cachePrepStmts=true&useServerPrepStmts=true&rewriteBatchedStatements=true&serverTimezone=Asia/Singapore
-      username: maxpato
-      password: maxpat0pwDD
+      url: jdbc:mariadb://127.0.0.1:3306/chubb?useUnicode=true&useSSL=false&allowPublicKeyRetrieval=true&characterEncoding=utf8&cachePrepStmts=true&useServerPrepStmts=true&rewriteBatchedStatements=true&serverTimezone=Asia/Singapore
+      username: root
+      password: yaom3ka4
       initial-size: 10
       min-idle: 5
       max-active: 50
@@ -59,6 +59,7 @@ spring:
     jpa:
       repositories:
         enabled: true
+
 jwt:
   auth:
     secret: UUtvOYvp9YHz/kQpTYTimW52hefnIW5eh49gnJHZqp4=
@@ -74,6 +75,15 @@ redis:
   address: redis://127.0.0.1:6379  # Redis server address with redis:// protocol
   password: chubb@RE@20
   database: 2                              # Default Redis database index
+  
+resource-service:
+  name: mars-resource
+  url: http://localhost:8084
+  
+settings:
+  download-url: http://127.0.0.1:8181/api
+  reroute-url:
+  reroute-required: false
 
 logging:
   pattern:

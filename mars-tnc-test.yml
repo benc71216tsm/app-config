@@ -1,7 +1,7 @@
 server:
   port: 8181
   servlet:
-    context-path: /api/v1/
+    context-path: /api/
 
 management:
   endpoints:
@@ -74,6 +74,15 @@ redis:
   address: redis://chubb-rds:6379  # Redis server address with redis:// protocol
   password: chubb@RE@20
   database: 2                              # Default Redis database index
+  
+resource-service:
+  name: mars-resource
+  url: http://mars-resource:8084
+  
+settings:
+  download-url: http://10.2.27.178:8181/api
+  reroute-url: 
+  reroute-required: false
 
 logging:
   pattern:
