@@ -78,10 +78,10 @@ redis:
   
 resource-service:
   name: mars-resource
-  url: http://localhost:8084
+  url: http://10.2.26.178:8084
   
 settings:
-  download-url: http://127.0.0.1:8181/api
+  server-url: http://192.168.254.253:8181/api
   reroute-url:
   reroute-required: false
 

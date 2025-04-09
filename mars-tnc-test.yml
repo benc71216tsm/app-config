@@ -80,7 +80,7 @@ resource-service:
   url: http://mars-resource:8084
   
 settings:
-  download-url: http://10.2.27.178:8181/api
+  server-url: http://10.2.26.178:8181/api
   reroute-url: 
   reroute-required: false
 

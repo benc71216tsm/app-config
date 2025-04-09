@@ -81,7 +81,7 @@ resource-service:
   url: http://${RESOURCE_URL}:8084
   
 settings:
-  download-url: ${DOWNLOAD_URL}
+  server-url: ${SERVER_URL}
   reroute-url: ${REROUTE_URL}
   reroute-required: ${REROUTE_REQUIRED}
 
