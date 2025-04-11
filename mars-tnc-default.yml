@@ -80,6 +80,10 @@ resource-service:
   name: ${RESOURCE_NAME}
   url: http://${RESOURCE_URL}:8084
   
+dev-control-service:
+  name: ${DEV_CONTROL_NAME}
+  url: http://${DEV_CONTROL_URL}:9812
+  
 settings:
   server-url: ${SERVER_URL}
   reroute-url: ${REROUTE_URL}

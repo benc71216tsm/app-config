@@ -78,6 +78,10 @@ redis:
 resource-service:
   name: mars-resource
   url: http://mars-resource:8084
+
+dev-control-service:
+  name: mars-devc
+  url: http://mars-devc:9812
   
 settings:
   server-url: http://10.2.26.178:8181/api

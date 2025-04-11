@@ -80,6 +80,10 @@ resource-service:
   name: mars-resource
   url: http://10.2.26.178:8084
   
+dev-control-service:
+  name: mars-devc
+  url: http://10.2.26.178:9812
+  
 settings:
   server-url: http://192.168.254.253:8181/api
   reroute-url:
