@@ -84,7 +84,7 @@ dev-control-service:
   url: http://mars-devc:9812
   
 settings:
-  server-url: http://10.2.26.178:8181/api
+  server-url: http://10.2.26.178:8181
   reroute-url: 
   reroute-required: false
 

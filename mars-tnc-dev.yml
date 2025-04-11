@@ -85,7 +85,7 @@ dev-control-service:
   url: http://10.2.26.178:9812
   
 settings:
-  server-url: http://192.168.254.253:8181/api
+  server-url: http://192.168.254.253:8181
   reroute-url:
   reroute-required: false
 
