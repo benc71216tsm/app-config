@@ -10,6 +10,21 @@ spring:
       discovery:
         locator:
           enabled: true
+      globalcors:
+        cors-configurations:
+          '[/**]':  # Applies to all paths
+            allowedOrigins: 
+                - "http://localhost:3000"
+                - "http://localhost:8100"
+            allowedMethods: 
+                - GET
+                - POST
+                - PUT
+                - DELETE
+                - OPTIONS
+            allowedHeaders: 
+                - "*"
+            allowCredentials: true
 eureka:
   client:
     register-with-eureka: false

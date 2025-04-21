@@ -15,6 +15,7 @@ spring:
           '[/**]':  # Applies to all paths
             allowedOrigins: 
                 - "http://localhost:3000"
+                - "http://localhost:8100"
             allowedMethods: 
                 - GET
                 - POST
