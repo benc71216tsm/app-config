@@ -89,6 +89,7 @@ backup:
     port: 3306
     user: maxpato
     password: maxpat0pwDD
+    database: chubbdb
   email:
     recipient: kp.cheong@tech-store.com.my
   path:
