@@ -75,6 +75,14 @@ redis:
   password: chubb@RE@20
   database: 2                       # Default Redis database index
 
+scheduled:
+  backup:
+    enabled: true
+
+es-service:
+  name: ${ES_NAME}
+  url: ${ES_HOSTNAME_URL}
+  
 logging:
   pattern:
     level: "%5p [${spring.application.name:},%X{traceId:-},%X{spanId:-}]"
