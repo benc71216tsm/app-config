@@ -79,10 +79,21 @@ scheduled:
   backup:
     enabled: true
 
+backup:
+  db:
+    host: host.docker.internal
+    port: 3306
+    user: maxpato
+    password: maxpat0pwDD
+  email:
+    recipient: kp.cheong@tech-store.com.my
+  path:
+    backup: /var/mariadb/backup/
+    
 es-service:
   name: ${ES_NAME}
   url: ${ES_HOSTNAME_URL}
-  
+
 logging:
   pattern:
     level: "%5p [${spring.application.name:},%X{traceId:-},%X{spanId:-}]"

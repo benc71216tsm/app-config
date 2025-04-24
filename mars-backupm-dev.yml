@@ -82,7 +82,18 @@ scheduled:
 es-service:
   name: mars-es
   url: http://localhost:8086
-  
+
+backup:
+  db:
+    host: host.docker.internal
+    port: 3306
+    user: maxpato
+    password: maxpat0pwDD
+  email:
+    recipient: kp.cheong@tech-store.com.my
+  path:
+    backup: /var/mariadb/backup/
+    
 logging:
   pattern:
     level: "%5p [${spring.application.name:},%X{traceId:-},%X{spanId:-}]"
