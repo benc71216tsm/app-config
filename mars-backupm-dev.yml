@@ -93,6 +93,8 @@ backup:
     recipient: kp.cheong@tech-store.com.my
   path:
     backup: /var/mariadb/backup/
+  cleanup:
+    retention-days: 10
     
 logging:
   pattern:
