@@ -81,17 +81,17 @@ scheduled:
 
 backup:
   db:
-    host: host.docker.internal
-    port: 3306
-    user: maxpato
-    password: maxpat0pwDD
-    database: chubbdb
+    host: ${BACKUP_DB_HOST}
+    port: ${BACKUP_DB_PORT}
+    user: ${BACKUP_DB_USER}
+    password: ${BACKUP_DB_PASS}
+    database: ${BACKUP_DB_NAME}
   email:
-    recipient: kp.cheong@tech-store.com.my
+    recipient: ${BACKUP_NOTIFY_EMAIL}
   path:
-    backup: /var/mariadb/backup/
+    backup: ${BACKUP_PATH}
   cleanup:
-    retention-days: 10
+    retention-days: ${BACKUP_RETENTION_DAYS}
     
 es-service:
   name: ${ES_NAME}
