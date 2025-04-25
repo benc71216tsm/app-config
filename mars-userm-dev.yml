@@ -101,3 +101,20 @@ es-service:
 resource-service:
   name: mars-resource
   url: http://localhost:8084
+  
+kafka:
+  bootstrap-servers: 127.0.0.1:9093
+  security:
+    protocol: SSL
+    ssl:
+      keystore-password: Techstore123
+      key-password: Techstore123
+      truststore-password: Techstore123
+  consumer:
+    enabled: true
+    group-id: action-log-consumer-group
+    topic: logs-action-topic
+    key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+    value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+    auto-offset-reset: earliest
+    enable-auto-commit: false
