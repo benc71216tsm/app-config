@@ -103,17 +103,17 @@ sms-interpreter-service:
   url: http://mars-smsi:9822
   
 kafka:
-  bootstrap-servers: ${KAFKA_SERVERS}
+  bootstrap-servers: mars-akb:9093
   security:
     protocol: SSL
     ssl:
-      keystore-password: ${KAFKA_KEYSTORE_PASSWORD}
-      key-password: ${KAFKA_KEY_PASSWORD}
-      truststore-password: ${KAFKA_TRUSTSTORE_PASSWORD}
+      keystore-password: Techstore123
+      key-password: Techstore123
+      truststore-password: Techstore123
   consumer:
     enabled: true
-    group-id: log-consumer-group
-    topic: logs-activity-topic
+    group-id: mars_devc
+    topic: com.mars.msg.user-activity
     key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
     value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
     auto-offset-reset: earliest
