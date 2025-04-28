@@ -112,8 +112,8 @@ kafka:
       truststore-password: ${KAFKA_TRUSTSTORE_PASSWORD}
   consumer:
     enabled: true
-    group-id: log-consumer-group
-    topic: logs-activity-topic
+    group-id: mars_devc
+    topic: com.mars.msg.log-activity
     key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
     value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
     auto-offset-reset: earliest
