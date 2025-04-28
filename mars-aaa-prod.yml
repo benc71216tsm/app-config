@@ -78,7 +78,7 @@ kafka:
       truststore-password: ${KAFKA_TRUSTSTORE_PASSWORD}
   producer:
     enabled: true
-    topic: logs-action-topic
+    topic: com.mars.msg.log-action
     key-serializer: org.apache.kafka.common.serialization.StringSerializer
     value-serializer: org.apache.kafka.common.serialization.StringSerializer
     retries: 0
