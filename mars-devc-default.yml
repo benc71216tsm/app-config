@@ -102,23 +102,6 @@ sms-interpreter-service:
   name: ${SMSI_NAME}
   url: http://${SMSI_URL}:9822
 
-kafka:
-  bootstrap-servers: ${KAFKA_SERVERS}
-  security:
-    protocol: SSL
-    ssl:
-      keystore-password: ${KAFKA_KEYSTORE_PASSWORD}
-      key-password: ${KAFKA_KEY_PASSWORD}
-      truststore-password: ${KAFKA_TRUSTSTORE_PASSWORD}
-  consumer:
-    enabled: true
-    group-id: mars_devc
-    topic: com.mars.msg.log-activity
-    key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
-    value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
-    auto-offset-reset: earliest
-    enable-auto-commit: false
-
 logging:
   pattern:
     level: "%5p [${spring.application.name:},%X{traceId:-},%X{spanId:-}]"
