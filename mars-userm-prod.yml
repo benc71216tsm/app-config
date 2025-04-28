@@ -104,3 +104,20 @@ es-service:
 resource-service:
   name: ${RESOURCE_NAME}
   url: ${RESOURCE_HOSTNAME_URL}
+  
+kafka:
+  bootstrap-servers: ${KAFKA_SERVERS}
+  security:
+    protocol: SSL
+    ssl:
+      keystore-password: ${KAFKA_KEYSTORE_PASSWORD}
+      key-password: ${KAFKA_KEY_PASSWORD}
+      truststore-password: ${KAFKA_TRUSTSTORE_PASSWORD}
+  consumer:
+    enabled: true
+    group-id: action-log-consumer-group
+    topic: logs-action-topic
+    key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+    value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+    auto-offset-reset: earliest
+    enable-auto-commit: false
