@@ -113,7 +113,7 @@ kafka:
   consumer:
     enabled: true
     group-id: mars_devc
-    topic: com.mars.msg.user-activity
+    topic: com.mars.msg.log-activity
     key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
     value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
     auto-offset-reset: earliest
