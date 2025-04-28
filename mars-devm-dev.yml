@@ -102,3 +102,18 @@ logging:
 user-service:
   name: mars-userm
   url: http://localhost:8083
+
+kafka:
+  bootstrap-servers: 127.0.0.1:9093
+  security:
+    protocol: SSL
+    ssl:
+      keystore-password: Techstore123
+      key-password: Techstore123
+      truststore-password: Techstore123
+  producer:
+    enabled: true
+    topic: com.mars.msg.log-action
+    key-serializer: org.apache.kafka.common.serialization.StringSerializer
+    value-serializer: org.apache.kafka.common.serialization.StringSerializer
+    retries: 0
