@@ -17,6 +17,8 @@ spring:
                 - "http://localhost:3000"
                 - "http://10.2.26.178:3000"
                 - "http://localhost:8100"
+                - "http://tsm.mars-iot.cloud:54000"
+                - "http://tsm.mars-iot.cloud:3000"
             allowedMethods: 
                 - GET
                 - POST
