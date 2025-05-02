@@ -21,8 +21,8 @@ spring:
     druid:
       driver-class-name: org.mariadb.jdbc.Driver
       url: jdbc:mariadb://10.2.26.178:4006/chubb?useUnicode=true&useSSL=false&allowPublicKeyRetrieval=true&characterEncoding=utf8&cachePrepStmts=true&useServerPrepStmts=true&rewriteBatchedStatements=true&serverTimezone=Asia/Singapore
-      username: root
-      password: yaom3ka4
+      username: maxpato
+      password: maxpat0pwDD
       initial-size: 10
       min-idle: 5
       max-active: 50
