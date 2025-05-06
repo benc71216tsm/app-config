@@ -30,7 +30,7 @@ spring:
             allowCredentials: true
 eureka:
   client:
-    register-with-eureka: false
+    register-with-eureka: true
     fetchRegistry: true
     service-url:
       defaultZone: ${EUREKA_CLIENT_SERVICEURL_DEFAULTZONE}
