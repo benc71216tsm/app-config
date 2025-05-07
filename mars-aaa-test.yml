@@ -63,7 +63,11 @@ mail:
 logging:
   pattern:
     level: "%5p [${spring.application.name:},%X{traceId:-},%X{spanId:-}]"
-
+  level:
+    feign: DEBUG
+    com.netflix.discovery: DEBUG
+    org.springframework.cloud.openfeign: DEBUG
+    
 user-service:
   name: ${USERM_NAME}
   url: ${USERM_HOSTNAME_URL}

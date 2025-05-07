@@ -92,7 +92,11 @@ redis:
 logging:
   pattern:
     level: "%5p [${spring.application.name:},%X{traceId:-},%X{spanId:-}]"
-
+  level:
+    feign: DEBUG
+    com.netflix.discovery: DEBUG
+    org.springframework.cloud.openfeign: DEBUG
+    
 es-service:
   name: ${ES_NAME}
   url: ${ES_HOSTNAME_URL}
