@@ -64,6 +64,9 @@ spring:
       repositories:
         enabled: true
   cloud:
+    inetutils:
+      preferred-networks:
+        - 10.1. # matches your pod subnet
     openfeign:
       compression:
         request:
@@ -80,6 +83,10 @@ jwt:
     refreshExpiration: 86400000 # Refresh token lifespan (24 hours)
 
 eureka:
+  instance:
+    prefer-ip-address: true
+    instance-id: ${spring.application.name}:${spring.cloud.client.ip-address}
+    hostname: ${spring.cloud.client.ip-address}
   client:
     service-url:
       defaultZone: ${EUREKA_CLIENT_SERVICEURL_DEFAULTZONE}

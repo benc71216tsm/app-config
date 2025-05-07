@@ -6,6 +6,9 @@ spring:
   application:
     name: mars-gateway
   cloud:
+    inetutils:
+      preferred-networks:
+        - 10.1. # matches your pod subnet
     gateway:
       discovery:
         locator:
@@ -29,6 +32,10 @@ spring:
                 - "*"
             allowCredentials: true
 eureka:
+  instance:
+    prefer-ip-address: true
+    instance-id: ${spring.application.name}:${spring.cloud.client.ip-address}
+    hostname: ${spring.cloud.client.ip-address}
   client:
     register-with-eureka: true
     fetchRegistry: true
