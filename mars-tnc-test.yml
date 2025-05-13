@@ -82,6 +82,10 @@ resource-service:
 dev-control-service:
   name: mars-devc
   url: http://mars-devc:9812
+
+devm-service:
+  name: ${DEVM_NAME}
+  url: ${DEVM_HOSTNAME_URL}
   
 settings:
   server-url: http://10.2.26.178:8080

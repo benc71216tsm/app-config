@@ -83,6 +83,10 @@ resource-service:
 dev-control-service:
   name: mars-devc
   url: http://127.0.0.1:9812
+
+devm-service:
+  name: mars-devm
+  url: http://localhost:8085
   
 settings:
   server-url: http://192.168.254.253:8181
