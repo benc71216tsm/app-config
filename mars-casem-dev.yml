@@ -109,6 +109,9 @@ sender-service:
 devm-service:
   name: mars-devm
   url: http://localhost:8085
+  
+settings:
+  excluded-site: 
 
 logging:
   pattern:

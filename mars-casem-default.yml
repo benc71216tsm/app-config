@@ -111,6 +111,9 @@ devm-service:
   name: ${DEVM_NAME}
   url: ${DEVM_HOSTNAME_URL}
   
+settings:
+  excluded-site: ${EXCLUDED_SITE}
+  
 logging:
   pattern:
     level: "%5p [${spring.application.name:},%X{traceId:-},%X{spanId:-}]"
