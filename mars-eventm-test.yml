@@ -108,6 +108,9 @@ redis:
   password: chubb@RE@20
   database: 2                       # Default Redis database index
   
+settings:
+  excluded-site: 6,7,175,176,201,202
+  
 logging:
   pattern:
     level: "%5p [${spring.application.name:},%X{traceId:-},%X{spanId:-}]"
