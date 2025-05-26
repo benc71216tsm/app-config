@@ -33,9 +33,9 @@ eureka:
 
 mqtt:
   client:
-    id: mqtt.k3mr
+    id: mqtt.k3mr1
   broker:
-    url: tcp://localhost:1883
+    url: tcp://chubb.mars-iot.cloud:51883
   username: techstore
   password: m751eLp
     

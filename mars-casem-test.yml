@@ -108,8 +108,11 @@ sender-service:
   url: http://mars-eventm:9807
 
 devm-service:
-  name: ${DEVM_NAME}
-  url: ${DEVM_HOSTNAME_URL}
+  name: mars-devm
+  url: http://mars-devm:8085
+  
+settings:
+  excluded-site: 6,7,175,176,201,202
   
 logging:
   pattern:

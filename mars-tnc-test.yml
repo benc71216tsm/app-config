@@ -84,11 +84,11 @@ dev-control-service:
   url: http://mars-devc:9812
 
 devm-service:
-  name: ${DEVM_NAME}
-  url: ${DEVM_HOSTNAME_URL}
+  name: mars-devm
+  url: http://mars-devm:8085
   
 settings:
-  server-url: http://10.2.26.178:8080
+  server-url: http://tsm.mars-iot.cloud:58080
   reroute-url: 
   reroute-required: false
 
