@@ -90,12 +90,11 @@ kafka:
       truststore-password: Techstore123
   consumer:
     enabled: true
-    group-id: mars_casem
+    group-id: mars_casem_2
     topic: com.mars.msg.k2,com.mars.msg.k3
     key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
     value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
     auto-offset-reset: latest
-    enable-auto-commit: false
     
 redis:
   address:  redis://127.0.0.1:6379    # Redis server address with redis:// protocol

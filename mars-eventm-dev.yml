@@ -101,6 +101,7 @@ kafka:
     key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
     value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
     auto-offset-reset: latest
+    enable-auto-commit: true
 
 redis:
   address: redis://127.0.0.1:6379     # Redis server address with redis:// protocol
