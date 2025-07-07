@@ -1,12 +1,8 @@
 server:
-  port: 8070
+  port: 9808
   servlet:
     context-path: /api/v1/
-  compression:
-    enabled: true
-    mime-types: application/json, application/xml, text/html, text/plain
-    min-response-size: 1024
-    
+
 management:
   endpoints:
     web:
@@ -19,12 +15,12 @@ management:
 spring:
   timezone: UTC+08:00
   application:
-    name: mars-geolocation
+    name: mars-tempm
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
     druid:
       driver-class-name: org.mariadb.jdbc.Driver
-      url: jdbc:mariadb://127.0.0.1:4006/chubbdb?useUnicode=true&useSSL=false&allowPublicKeyRetrieval=true&characterEncoding=utf8&cachePrepStmts=true&useServerPrepStmts=true&rewriteBatchedStatements=true&serverTimezone=Asia/Singapore
+      url: jdbc:mariadb://${MAXSCALE_HOSTNAME}:4006/chubbdb?useUnicode=true&useSSL=false&allowPublicKeyRetrieval=true&characterEncoding=utf8&cachePrepStmts=true&useServerPrepStmts=true&rewriteBatchedStatements=true&serverTimezone=Asia/Singapore
       username: maxpato
       password: maxpat0pwDD
       initial-size: 10
@@ -63,33 +59,21 @@ spring:
     jpa:
       repositories:
         enabled: true
-  cloud:
-    openfeign:
-      compression:
-        request:
-          enabled: true
-          mime-types: text/xml,application/xml,application/json
-          min-request-size: 1024
-        response:
-          enabled: true
 jwt:
   auth:
     secret: UUtvOYvp9YHz/kQpTYTimW52hefnIW5eh49gnJHZqp4=
-    expiration: 300000 # Access token lifespan (5 min)
+    expiration: 86400000 # Access token lifespan (24 hours)
     refreshExpiration: 86400000 # Refresh token lifespan (24 hours)
 
 eureka:
   client:
     service-url:
-      defaultZone: http://localhost:8761/eureka/
-      
+      defaultZone: ${EUREKA_CLIENT_SERVICEURL_DEFAULTZONE}
+    
 redis:
-  address: redis://127.0.0.1:6379     # Redis server address with redis:// protocol
+  address: redis://${REDIS_HOSTNAME}:6379    # Redis server address with redis:// protocol
   password: chubb@RE@20
   database: 2                       # Default Redis database index
-
-google-map:
-    apiKey: 
 
 logging:
   pattern:

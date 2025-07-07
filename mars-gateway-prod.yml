@@ -1,17 +1,14 @@
 server:
   port: 8080
-  ssl:
-    enabled: true
-    key-store: file:/app/keystore.p12 
-    key-store-password: pkcs1Mars2025
-    key-store-type: PKCS12
-    key-alias: testmars
     
 spring:
   timezone: UTC+08:00
   application:
     name: mars-gateway
   cloud:
+    inetutils:
+      preferred-networks:
+        - 10.1. # matches your pod subnet
     gateway:
       discovery:
         locator:
@@ -21,7 +18,11 @@ spring:
           '[/**]':  # Applies to all paths
             allowedOrigins: 
                 - "http://localhost:3000"
+                - "http://10.2.26.178:3000"
+                - "http://10.2.25.213:3000"
                 - "http://localhost:8100"
+                - "http://tsm.mars-iot.cloud:54000"
+                - "http://tsm.mars-iot.cloud:3000"
             allowedMethods: 
                 - GET
                 - POST
@@ -32,8 +33,12 @@ spring:
                 - "*"
             allowCredentials: true
 eureka:
+  instance:
+    prefer-ip-address: true
+    instance-id: ${spring.application.name}:${spring.cloud.client.ip-address}
+    hostname: ${spring.cloud.client.ip-address}
   client:
-    register-with-eureka: false
+    register-with-eureka: true
     fetchRegistry: true
     service-url:
       defaultZone: ${EUREKA_CLIENT_SERVICEURL_DEFAULTZONE}

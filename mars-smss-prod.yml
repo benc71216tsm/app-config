@@ -1,0 +1,64 @@
+server:
+  port: 9821
+  servlet:
+    context-path: /api/v1/
+  compression:
+    enabled: true
+    mime-types: application/json, application/xml, text/html, text/plain
+    min-response-size: 1024
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health
+  endpoint:
+    health:
+      enabled: true
+      
+spring:
+  timezone: UTC+08:00
+  application:
+    name: mars-smss
+  cloud:
+    openfeign:
+      compression:
+        request:
+          enabled: true
+          mime-types: text/xml,application/xml,application/json
+          min-request-size: 1024
+        response:
+          enabled: true      
+camel:
+  component:
+    smpp:
+      configuration:
+        url: "smpp://{{camel.component.smpp.configuration.system-id}}@{{camel.component.smpp.configuration.host}}:{{camel.component.smpp.configuration.port}}?password={{camel.component.smpp.configuration.password}}&enquireLinkTimer=3000&transactionTimer=5000&systemType=producer&destAddr=[destination_address]&sourceAddr={{camel.component.smpp.configuration.source-address}}"
+        host: "smpp.seamway.com"
+        port: "9000"
+        password: "234567"
+        system-id: "SMPP-21052"
+        source-address: "7544"
+        source-addr-ton: 0x05
+        source-addr-npi: 0x01
+        dest-addr-npi: 0x01
+        dest-addr-ton: 0x01
+        registered-delivery: 1
+    bean:
+      scope: singleton
+
+eureka:
+  client:
+    service-url:
+      defaultZone: ${EUREKA_CLIENT_SERVICEURL_DEFAULTZONE}
+
+logging:
+  pattern:
+    level: "%5p [${spring.application.name:},%X{traceId:-},%X{spanId:-}]"
+
+yeastar:
+  api:
+    host: ${YEASTAR_HOST}
+    port: ${YEASTAR_PORT} 
+    username: ${YEASTAR_USERNAME} 
+    password: ${YEASTAR_PASSWORD}
+    channel: ${YEASTAR_DEFAULT_CHANNEL}

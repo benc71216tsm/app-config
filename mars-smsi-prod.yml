@@ -1,5 +1,5 @@
 server:
-  port: 8070
+  port: 9822
   servlet:
     context-path: /api/v1/
   compression:
@@ -19,12 +19,12 @@ management:
 spring:
   timezone: UTC+08:00
   application:
-    name: mars-geolocation
+    name: mars-smsi
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
     druid:
       driver-class-name: org.mariadb.jdbc.Driver
-      url: jdbc:mariadb://127.0.0.1:4006/chubbdb?useUnicode=true&useSSL=false&allowPublicKeyRetrieval=true&characterEncoding=utf8&cachePrepStmts=true&useServerPrepStmts=true&rewriteBatchedStatements=true&serverTimezone=Asia/Singapore
+      url: jdbc:mariadb://${MAXSCALE_HOSTNAME}:4006/chubbdb?useUnicode=true&useSSL=false&allowPublicKeyRetrieval=true&characterEncoding=utf8&cachePrepStmts=true&useServerPrepStmts=true&rewriteBatchedStatements=true&serverTimezone=Asia/Singapore
       username: maxpato
       password: maxpat0pwDD
       initial-size: 10
@@ -72,25 +72,41 @@ spring:
           min-request-size: 1024
         response:
           enabled: true
-jwt:
-  auth:
-    secret: UUtvOYvp9YHz/kQpTYTimW52hefnIW5eh49gnJHZqp4=
-    expiration: 300000 # Access token lifespan (5 min)
-    refreshExpiration: 86400000 # Refresh token lifespan (24 hours)
-
+          
 eureka:
   client:
     service-url:
-      defaultZone: http://localhost:8761/eureka/
+      defaultZone: ${EUREKA_CLIENT_SERVICEURL_DEFAULTZONE}
       
 redis:
-  address: redis://127.0.0.1:6379     # Redis server address with redis:// protocol
+  address: redis://${REDIS_HOSTNAME}:6379    # Redis server address with redis:// protocol
   password: chubb@RE@20
   database: 2                       # Default Redis database index
+  
+kafka:
+  bootstrap-servers: ${KAFKA_SERVERS}
+  security:
+    protocol: SSL
+    ssl:
+      keystore-password: ${KAFKA_KEYSTORE_PASSWORD}
+      key-password: ${KAFKA_KEY_PASSWORD}
+      truststore-password: ${KAFKA_TRUSTSTORE_PASSWORD}
+  producer:
+    enabled: true
+    topic: com.mars.msg.k2,com.mars.msg.k3,logs-activity-topic
+    key-serializer: org.apache.kafka.common.serialization.StringSerializer
+    value-serializer: org.apache.kafka.common.serialization.StringSerializer
+    retries: 0
+  
+sender-service:
+  name: ${SMSS_INTERPRETER_NAME}
+  url: ${SMSS_INTERPRETER_HOSTNAME_URL}
 
-google-map:
-    apiKey: 
-
+log: 
+  scheduler:
+    test:
+       enabled: ${log_SCHEDULER_TEST}
+       
 logging:
   pattern:
     level: "%5p [${spring.application.name:},%X{traceId:-},%X{spanId:-}]"

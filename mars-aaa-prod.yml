@@ -20,6 +20,9 @@ spring:
   application:
     name: mars-aaa
   cloud:
+    inetutils:
+      preferred-networks:
+        - 10.1. # matches your pod subnet
     openfeign:
       compression:
         request:
@@ -32,10 +35,14 @@ spring:
 jwt:
   auth:
     secret: UUtvOYvp9YHz/kQpTYTimW52hefnIW5eh49gnJHZqp4=
-    expiration: 600000 # Access token lifespan (10 min)
+    expiration: 86400000 # Access token lifespan (10 min)
     refreshExpiration: 86400000 # Refresh token lifespan (24 hours)
 
 eureka:
+  instance:
+    prefer-ip-address: true
+    instance-id: ${spring.application.name}:${spring.cloud.client.ip-address}
+    hostname: ${spring.cloud.client.ip-address}
   client:
     service-url:
       defaultZone: ${EUREKA_CLIENT_SERVICEURL_DEFAULTZONE}
@@ -46,11 +53,11 @@ redis:
   database: 2                       # Default Redis database index
 
 mail:
-  host: sgp1015.siteground.asia
-  port: 465
-  username: chubb-micc5000@mars-iot.cloud
-  password: P37YC2T4qBtpuk9
-  from: chubb-micc5000@mars-iot.cloud
+  host: ${MAIL_HOST}
+  port: ${MAIL_PORT}
+  username: ${MAIL_USERNAME}
+  password: ${MAIL_PASSWORD}
+  from: ${MAIL_FROM}
   properties:
     mail:
       smtp:

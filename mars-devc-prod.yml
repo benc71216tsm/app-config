@@ -1,5 +1,5 @@
 server:
-  port: 8070
+  port: 9812
   servlet:
     context-path: /api/v1/
   compression:
@@ -19,12 +19,12 @@ management:
 spring:
   timezone: UTC+08:00
   application:
-    name: mars-geolocation
+    name: mars-devc
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
     druid:
       driver-class-name: org.mariadb.jdbc.Driver
-      url: jdbc:mariadb://127.0.0.1:4006/chubbdb?useUnicode=true&useSSL=false&allowPublicKeyRetrieval=true&characterEncoding=utf8&cachePrepStmts=true&useServerPrepStmts=true&rewriteBatchedStatements=true&serverTimezone=Asia/Singapore
+      url: jdbc:mariadb://${MAXSCALE_HOSTNAME}:4006/chubbdb?useUnicode=true&useSSL=false&allowPublicKeyRetrieval=true&characterEncoding=utf8&cachePrepStmts=true&useServerPrepStmts=true&rewriteBatchedStatements=true&serverTimezone=Asia/Singapore
       username: maxpato
       password: maxpat0pwDD
       initial-size: 10
@@ -63,6 +63,7 @@ spring:
     jpa:
       repositories:
         enabled: true
+        
   cloud:
     openfeign:
       compression:
@@ -72,24 +73,34 @@ spring:
           min-request-size: 1024
         response:
           enabled: true
+          
 jwt:
   auth:
     secret: UUtvOYvp9YHz/kQpTYTimW52hefnIW5eh49gnJHZqp4=
-    expiration: 300000 # Access token lifespan (5 min)
+    expiration: 86400000 # Access token lifespan (5 min)
     refreshExpiration: 86400000 # Refresh token lifespan (24 hours)
 
 eureka:
   client:
     service-url:
-      defaultZone: http://localhost:8761/eureka/
-      
-redis:
-  address: redis://127.0.0.1:6379     # Redis server address with redis:// protocol
-  password: chubb@RE@20
-  database: 2                       # Default Redis database index
+      defaultZone: ${EUREKA_CLIENT_SERVICEURL_DEFAULTZONE}
 
-google-map:
-    apiKey: 
+redis:
+  address: redis://${REDIS_HOSTNAME}:6379  # Redis server address with redis:// protocol
+  password: chubb@RE@20
+  database: 2                      # Default Redis database index
+  
+k2-interpreter-service:
+  name: ${K2_INTERPRETER_NAME}
+  url: ${K2_INTERPRETER_HOSTNAME_URL}
+  
+k3-interpreter-service:
+  name: ${K3_INTERPRETER_NAME}
+  url: ${K3_INTERPRETER_HOSTNAME_URL}
+  
+sms-interpreter-service:
+  name: ${SMS_INTERPRETER_NAME}
+  url: ${SMS_INTERPRETER_HOSTNAME_URL}
 
 logging:
   pattern:

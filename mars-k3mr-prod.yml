@@ -1,5 +1,5 @@
 server:
-  port: 8182
+  port: 9804
   servlet:
     context-path: /api/v1/
 
@@ -15,7 +15,7 @@ management:
 spring:
   timezone: UTC+08:00
   application:
-    name: mars-citeh
+    name: mars-k3mr
   cloud:
     openfeign:
       compression:
@@ -26,33 +26,22 @@ spring:
         response:
           enabled: true
           
-jwt:
-  auth:
-    secret: UUtvOYvp9YHz/kQpTYTimW52hefnIW5eh49gnJHZqp4=
-    expiration: 86400000 # Access token lifespan (5 min)
-    refreshExpiration: 86400000 # Refresh token lifespan (24 hours)
-
 eureka:
   client:
     service-url:
       defaultZone: ${EUREKA_CLIENT_SERVICEURL_DEFAULTZONE}
+
+mqtt:
+  client:
+    id: mqtt.k3mr
+  broker:
+    url: tcp://${MQTT_HOST}:51883
+  username: ${MQTT_USERNAME}
+  password: ${MQTT_PASSWORD}
     
-redis:
-  address: redis://${REDIS_HOSTNAME}:6379    # Redis server address with redis:// protocol
-  password: chubb@RE@20
-  database: 2                       # Default Redis database index
-
-dev-control-service:
-  name: ${DEVC_NAME}
-  url: ${DEVC_HOSTNAME_URL}
-  
-user-service:
-  name: ${USERM_NAME}
-  url: ${USERM_HOSTNAME_URL}
-
-devm-service:
-  name: ${DEVM_NAME}
-  url: ${DEVM_HOSTNAME_URL}
+interpreter-service:
+  name: ${INTERPRETER_NAME}
+  url: ${INTERPRETER_HOSTNAME_URL}
   
 logging:
   pattern:
