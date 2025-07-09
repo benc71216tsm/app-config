@@ -20,15 +20,6 @@ spring:
   timezone: UTC+08:00
   application:
     name: mars-userm
-  eureka:
-    client:
-      register-with-eureka: true
-      fetchRegistry: true
-      service-url:
-        defaultZone: ${EUREKA_CLIENT_SERVICEURL_DEFAULTZONE}
-    instance:
-      hostname: ${EUREKA_HOSTNAME}
-      prefer-ip-address: true
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
     druid:
@@ -88,6 +79,15 @@ jwt:
     expiration: 300000 # Access token lifespan (5 min)
     refreshExpiration: 86400000 # Refresh token lifespan (24 hours)
 
+eureka:
+  instance:
+    prefer-ip-address: true
+    instance-id: ${spring.application.name}:${spring.cloud.client.ip-address}
+    hostname: ${spring.cloud.client.ip-address}
+  client:
+    service-url:
+      defaultZone: ${EUREKA_CLIENT_SERVICEURL_DEFAULTZONE}
+      
 redis:
   address: redis://${REDIS_HOSTNAME}:6379    # Redis server address with redis:// protocol
   password: chubb@RE@20

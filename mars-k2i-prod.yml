@@ -74,6 +74,10 @@ spring:
           enabled: true
           
 eureka:
+  instance:
+    prefer-ip-address: true
+    instance-id: ${spring.application.name}:${spring.cloud.client.ip-address}
+    hostname: ${spring.cloud.client.ip-address}
   client:
     service-url:
       defaultZone: ${EUREKA_CLIENT_SERVICEURL_DEFAULTZONE}
