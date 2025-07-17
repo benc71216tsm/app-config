@@ -91,6 +91,10 @@ kafka:
   bootstrap-servers: ${KAFKA_SERVERS}
   security:
     protocol: PLAINTEXT
+    ssl:
+      keystore-password: empty
+      key-password: empty
+      truststore-password: empty
   producer:
     enabled: true
     topic: com.mars.msg.k3
