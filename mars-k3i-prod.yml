@@ -90,11 +90,7 @@ redis:
 kafka:
   bootstrap-servers: ${KAFKA_SERVERS}
   security:
-    protocol: SSL
-    ssl:
-      keystore-password: ${KAFKA_KEYSTORE_PASSWORD}
-      key-password: ${KAFKA_KEY_PASSWORD}
-      truststore-password: ${KAFKA_TRUSTSTORE_PASSWORD}
+    protocol: PLAINTEXT
   producer:
     enabled: true
     topic: com.mars.msg.k3
