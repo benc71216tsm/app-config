@@ -46,9 +46,9 @@ redis:
 
 netty:
   port: 4440
-  boss-count: 1
-  worker-count: 8
-  backlog: 2000
+  boss-count: 4
+  worker-count: 20
+  backlog: 2048
   keep-alive: true
   client-timeout: 20
     
