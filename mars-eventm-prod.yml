@@ -106,11 +106,15 @@ kafka:
     topic: com.mars.msg.k2,com.mars.msg.k3
     key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
     value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+    auto-offset-reset: latest
 
 redis:
   address: redis://${REDIS_HOSTNAME}:6379    # Redis server address with redis:// protocol
   password: chubb@RE@20
   database: 2                       # Default Redis database index
+  
+settings:
+  excluded-site: ${EXCLUDED_SITE}
   
 logging:
   pattern:
