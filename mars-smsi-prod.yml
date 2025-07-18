@@ -103,8 +103,8 @@ kafka:
     retries: 0
   
 sender-service:
-  name: ${INTERPRETER_NAME}
-  url: ${INTERPRETER_HOSTNAME_URL}
+  name: ${SENDER_NAME}
+  url: ${SENDER_HOSTNAME_URL}
 
 log: 
   scheduler:
