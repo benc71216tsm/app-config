@@ -103,8 +103,8 @@ kafka:
     retries: 0
   
 sender-service:
-  name: ${SMSS_INTERPRETER_NAME}
-  url: ${SMSS_INTERPRETER_HOSTNAME_URL}
+  name: ${INTERPRETER_NAME}
+  url: ${INTERPRETER_HOSTNAME_URL}
 
 log: 
   scheduler:
