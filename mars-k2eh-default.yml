@@ -34,12 +34,7 @@ eureka:
   client:
     service-url:
       defaultZone: ${EUREKA_CLIENT_SERVICEURL_DEFAULTZONE}
-
-redis:
-  address: redis://${REDIS_HOSTNAME}:6379  # Redis server address with redis:// protocol
-  password: ${REDIS_PASSWORD}
-  database: 2                              # Default Redis database index
-
+      
 netty:
   port: 4440
   boss-count: 1

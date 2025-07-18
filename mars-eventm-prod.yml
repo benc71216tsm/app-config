@@ -95,7 +95,7 @@ eureka:
 kafka:
   bootstrap-servers: ${KAFKA_SERVERS}
   security:
-    protocol: SSL
+    protocol: PLAINTEXT
     ssl:
       keystore-password: ${KAFKA_KEYSTORE_PASSWORD}
       key-password: ${KAFKA_KEY_PASSWORD}
@@ -107,12 +107,14 @@ kafka:
     key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
     value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
     auto-offset-reset: latest
-    enable-auto-commit: true
 
 redis:
   address: redis://${REDIS_HOSTNAME}:6379    # Redis server address with redis:// protocol
   password: chubb@RE@20
   database: 2                       # Default Redis database index
+  
+settings:
+  excluded-site: ${EXCLUDED_SITE}
   
 logging:
   pattern:

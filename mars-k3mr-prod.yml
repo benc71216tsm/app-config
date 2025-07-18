@@ -39,7 +39,7 @@ mqtt:
   client:
     id: mqtt.k3mr
   broker:
-    url: tcp://${MQTT_HOST}:51883
+    url: tcp://${MQTT_HOST}:${MQTT_PORT}
   username: ${MQTT_USERNAME}
   password: ${MQTT_PASSWORD}
     
