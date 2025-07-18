@@ -110,7 +110,7 @@ user-service:
 kafka:
   bootstrap-servers: ${KAFKA_SERVERS}
   security:
-    protocol: SSL
+    protocol: PLAINTEXT
     ssl:
       keystore-password: ${KAFKA_KEYSTORE_PASSWORD}
       key-password: ${KAFKA_KEY_PASSWORD}
