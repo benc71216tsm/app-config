@@ -1,7 +1,7 @@
 server:
-  port: 58181
+  port: 9827
   servlet:
-    context-path: /api/
+    context-path: /api/v1/
 
 management:
   endpoints:
@@ -15,7 +15,7 @@ management:
 spring:
   timezone: UTC+08:00
   application:
-    name: mars-tnc
+    name: mars-cmtm
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
     druid:
@@ -64,7 +64,7 @@ jwt:
     secret: UUtvOYvp9YHz/kQpTYTimW52hefnIW5eh49gnJHZqp4=
     expiration: 86400000 # Access token lifespan (5 min)
     refreshExpiration: 86400000 # Refresh token lifespan (24 hours)
-
+    
 eureka:
   instance:
     prefer-ip-address: true
@@ -73,29 +73,20 @@ eureka:
   client:
     service-url:
       defaultZone: ${EUREKA_CLIENT_SERVICEURL_DEFAULTZONE}
-
+      
 redis:
-  address: redis://${REDIS_HOSTNAME}:6379  # Redis server address with redis:// protocol
+  address:  redis://${REDIS_HOSTNAME}:6379    # Redis server address with redis:// protocol
   password: chubb@RE@20
-  database: 2                              # Default Redis database index
+  database: 2                       # Default Redis database index
+        
+serial:
+  port:
+    name: COM5
+    baudRate: 9600
+    dataBits: 8
+    stopBits: 1
+    parity: 0
   
-resource-service:
-  name: ${RESOURCE_NAME}
-  url: ${RESOURCE_HOSTNAME_URL}
-
-dev-control-service:
-  name: ${DEVC_NAME}
-  url: ${DEVC_HOSTNAME_URL}
-
-devm-service:
-  name: ${DEVM_NAME}
-  url: ${DEVM_HOSTNAME_URL}
-  
-settings:
-  server-url: ${SERVER_URL}
-  reroute-url: ${REROUTE_URL}
-  reroute-required: ${REROUTE_REQUIRED}
-
 logging:
   pattern:
     level: "%5p [${spring.application.name:},%X{traceId:-},%X{spanId:-}]"
