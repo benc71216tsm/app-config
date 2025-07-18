@@ -73,6 +73,22 @@ eureka:
   client:
     service-url:
       defaultZone: ${EUREKA_CLIENT_SERVICEURL_DEFAULTZONE}
+
+kafka:
+  bootstrap-servers: ${KAFKA_SERVERS}
+  security:
+    protocol: PLAINTEXT
+    ssl:
+      keystore-password: ${KAFKA_KEYSTORE_PASSWORD}
+      key-password: ${KAFKA_KEY_PASSWORD}
+      truststore-password: ${KAFKA_TRUSTSTORE_PASSWORD}
+  consumer:
+    enabled: true
+    group-id: mars_pef
+    topic: com.mars.msg.k2,com.mars.msg.k3
+    key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+    value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+    auto-offset-reset: latest
       
 redis:
   address:  redis://${REDIS_HOSTNAME}:6379    # Redis server address with redis:// protocol
