@@ -66,3 +66,7 @@ yeastar:
 dev-control-service:
   name: mars-devc
   url: http://localhost:9812
+  
+devm-service:
+  name: mars-devm
+  url: http://localhost:8085

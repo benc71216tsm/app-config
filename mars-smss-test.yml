@@ -66,3 +66,7 @@ yeastar:
 dev-control-service:
   name: ${DEVC_NAME}
   url: ${DEVC_HOSTNAME_URL}
+  
+devm-service:
+  name: ${DEVM_NAME}
+  url: ${DEVM_HOSTNAME_URL}
