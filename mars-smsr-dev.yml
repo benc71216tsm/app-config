@@ -57,11 +57,11 @@ logging:
     
 yeastar:
   api:
-    host: 172.16.244.13
+    host: 172.16.244.133
     port: 5038 
     username: apiuser 
     password: apipass
-    channel: 2
+    channel: 4
 
 dev-control-service:
   name: mars-devc
