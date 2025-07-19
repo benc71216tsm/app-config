@@ -97,7 +97,7 @@ redis:
         
 serial:
   port:
-    name: COM3
+    name: COM4
     baudRate: 9600
     dataBits: 8
     stopBits: 1
