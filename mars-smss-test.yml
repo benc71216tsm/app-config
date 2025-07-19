@@ -62,3 +62,7 @@ yeastar:
     username: ${YEASTAR_USERNAME} 
     password: ${YEASTAR_PASSWORD}
     channel: ${YEASTAR_DEFAULT_CHANNEL}
+    
+dev-control-service:
+  name: ${DEVC_NAME}
+  url: ${DEVC_HOSTNAME_URL}

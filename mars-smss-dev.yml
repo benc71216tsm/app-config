@@ -62,3 +62,7 @@ yeastar:
     username: apiuser 
     password: apipass
     channel: 3
+    
+dev-control-service:
+  name: mars-devc
+  url: http://localhost:9812
