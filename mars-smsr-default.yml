@@ -71,3 +71,6 @@ dev-control-service:
 devm-service:
   name: ${DEVM_NAME}
   url: ${DEVM_HOSTNAME_URL}
+
+sms:
+  whitelist: []

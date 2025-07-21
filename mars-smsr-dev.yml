@@ -70,3 +70,6 @@ dev-control-service:
 devm-service:
   name: mars-devm
   url: http://localhost:8085
+  
+sms:
+  whitelist: []
