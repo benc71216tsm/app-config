@@ -39,7 +39,7 @@ mqtt:
   client:
     id: mqtt.k3ms
   broker:
-    url: tcp://chubb.mars-iot.cloud:51883
+    url: tcp://10.2.26.112:1883
   username: techstore
   password: m751eLp
   
