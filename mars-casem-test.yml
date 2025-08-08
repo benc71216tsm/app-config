@@ -111,7 +111,7 @@ devm-service:
   url: http://mars-devm:8085
   
 settings:
-  excluded-site: 6,7,175,176,201,202
+  excluded-site: ${EXCLUDED_SITE}
   
 logging:
   pattern:
