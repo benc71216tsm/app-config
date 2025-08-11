@@ -110,7 +110,7 @@ devm-service:
   url: http://localhost:8085
   
 settings:
-  excluded-site: ${EXCLUDED_SITE}
+  excluded-site: 999999
 
 logging:
   pattern:
