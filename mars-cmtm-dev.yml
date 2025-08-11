@@ -11,11 +11,12 @@ management:
   endpoint:
     health:
       enabled: true
-      
+
 spring:
   timezone: UTC+08:00
   application:
     name: mars-cmtm
+
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
     druid:
@@ -38,27 +39,31 @@ spring:
       remove-abandoned: true      # Enable the removal of abandoned connections
       remove-abandoned-timeout: 180 # Time (in seconds) before a connection is considered abandoned
       log-abandoned: true         # Log details of abandoned connections
-    jpa:
-      database: mariadb
-      database-platform: org.hibernate.dialect.MariaDBDialect
-      show-sql: true
+
+  jpa:
+    database: mariadb
+    database-platform: org.hibernate.dialect.MariaDBDialect
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    properties:
       hibernate:
-        ddl-auto: update
-      properties:
-        hibernate:
-          dialect: org.hibernate.dialect.MariaDBDialect
-          jdbc:
-            time_zone: UTC+08:00
-            lob:
-              non_contextual_creation: true
-            batch_size: 30
+        dialect: org.hibernate.dialect.MariaDBDialect
+        jdbc:
+          time_zone: UTC+08:00
+          lob:
+            non_contextual_creation: true
+          batch_size: 30
+
   data:
     redis:
       repositories:
         enabled: false
-    jpa:
-      repositories:
-        enabled: true
+  redis:
+    address: redis://127.0.0.1:6379
+    password: chubb@RE@20
+    database: 2
+
 jwt:
   auth:
     secret: UUtvOYvp9YHz/kQpTYTimW52hefnIW5eh49gnJHZqp4=
@@ -69,11 +74,6 @@ eureka:
   client:
     service-url:
       defaultZone: http://localhost:8761/eureka/
-      
-redis:
-  address:  redis://127.0.0.1:6379    # Redis server address with redis:// protocol
-  password: chubb@RE@20
-  database: 2                       # Default Redis database index
 
 logging:
   pattern:
