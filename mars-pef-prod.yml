@@ -15,7 +15,7 @@ management:
 spring:
   timezone: UTC+08:00
   application:
-    name: mars-cmtm
+    name: mars-pef
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
     druid:
