@@ -17,6 +17,8 @@ management:
       enabled: true
         
 spring:
+  jmx:
+    enabled: true
   timezone: UTC+08:00
   application:
     name: mars-userm
