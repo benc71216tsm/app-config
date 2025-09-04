@@ -62,6 +62,14 @@ yeastar:
     username: ${YEASTAR_USERNAME} 
     password: ${YEASTAR_PASSWORD}
     channel: ${YEASTAR_DEFAULT_CHANNEL}
+
+yeastar-two:
+  api:
+    host: ${YEASTAR_HOST_TWO}
+    port: ${YEASTAR_PORT_TWO} 
+    username: ${YEASTAR_USERNAME_TWO} 
+    password: ${YEASTAR_PASSWORD_TWO}
+    channel: ${YEASTAR_DEFAULT_CHANNEL_TWO}
  
 dev-control-service:
   name: ${DEVC_NAME}
@@ -72,4 +80,7 @@ devm-service:
   url: ${DEVM_HOSTNAME_URL}
   
 sms:
+  whitelist: []
+
+sms-two:
   whitelist: []
