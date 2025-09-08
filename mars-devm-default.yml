@@ -102,6 +102,10 @@ logging:
 user-service:
   name: ${USERM_NAME}
   url: ${USERM_HOSTNAME_URL}
+
+tnc-service:
+  name: ${TNC_NAME}
+  url: ${TNC_HOSTNAME_URL}
   
 kafka:
   bootstrap-servers: ${KAFKA_SERVERS}

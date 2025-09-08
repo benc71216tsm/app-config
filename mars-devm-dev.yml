@@ -102,6 +102,10 @@ logging:
 user-service:
   name: mars-userm
   url: http://localhost:8083
+  
+tnc-service:
+  name: mars-tnc
+  url: http://localhost:8181
 
 kafka:
   bootstrap-servers: 127.0.0.1:9093
