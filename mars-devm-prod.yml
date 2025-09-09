@@ -111,6 +111,10 @@ tnc-service:
   name: ${TNC_NAME}
   url: ${TNC_HOSTNAME_URL}
   
+k3-interpreter-service:
+  name: ${K3_INTER_NAME}
+  url: ${K3_INTER_HOSTNAME_URL}
+  
 kafka:
   bootstrap-servers: ${KAFKA_SERVERS}
   security:
