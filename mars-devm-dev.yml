@@ -106,6 +106,10 @@ user-service:
 tnc-service:
   name: mars-tnc
   url: http://localhost:8181
+  
+k3-interpreter-service:
+  name: mars-k3i
+  url: http://localhost:9806
 
 kafka:
   bootstrap-servers: 127.0.0.1:9093
