@@ -101,6 +101,10 @@ kafka:
 sender-service:
   name: ${K3MS_NAME}
   url: http://${K3MS_URL}:9805
+  
+devm-service:
+  name: ${DEVM_NAME}
+  url: ${DEVM_HOSTNAME_URL}
 
 logging:
   pattern:

@@ -101,6 +101,10 @@ kafka:
 sender-service:
   name: mars-k3ms
   url: http://mars-k3ms:9805
+  
+devm-service:
+  name: mars-devm
+  url: http://mars-devm:8085
 
 logging:
   pattern:

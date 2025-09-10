@@ -105,6 +105,10 @@ kafka:
 sender-service:
   name: ${SENDER_NAME}
   url: ${SENDER_HOSTNAME_URL}
+  
+devm-service:
+  name: ${DEVM_NAME}
+  url: ${DEVM_HOSTNAME_URL}
 
 logging:
   pattern:
