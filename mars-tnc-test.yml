@@ -87,6 +87,14 @@ devm-service:
   name: mars-devm
   url: http://mars-devm:8085
   
+k2-interpreter-service:
+  name: mars-k2i
+  url: http://mars-k2i:9803
+  
+k3-interpreter-service:
+  name: mars-k3i
+  url: http://mars-k3i:9806
+  
 settings:
   server-url: http://tsm.mars-iot.cloud:58080
   reroute-url: 

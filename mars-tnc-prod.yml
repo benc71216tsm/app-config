@@ -91,6 +91,14 @@ devm-service:
   name: ${DEVM_NAME}
   url: ${DEVM_HOSTNAME_URL}
   
+k2-interpreter-service:
+  name: ${K2_INTERPRETER_NAME}
+  url: ${K2_INTERPRETER_HOSTNAME_URL}
+  
+k3-interpreter-service:
+  name: ${K3_INTERPRETER_NAME}
+  url: ${K3_INTERPRETER_HOSTNAME_URL}
+  
 settings:
   server-url: ${SERVER_URL}
   reroute-url: ${REROUTE_URL}

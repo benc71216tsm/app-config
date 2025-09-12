@@ -78,11 +78,19 @@ redis:
 
 resource-service:
   name: ${RESOURCE_NAME}
-  url: http://${RESOURCE_URL}:8084
+  url: ${RESOURCE_URL}
   
 dev-control-service:
   name: ${DEV_CONTROL_NAME}
-  url: http://${DEV_CONTROL_URL}:9812
+  url: ${DEV_CONTROL_URL}
+  
+k2-interpreter-service:
+  name: ${K2I_NAME}
+  url: ${K2I_URL}
+  
+k3-interpreter-service:
+  name: ${K3I_NAME}
+  url: ${K3I_URL}
 
 devm-service:
   name: ${DEVM_NAME}

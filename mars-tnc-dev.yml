@@ -88,6 +88,14 @@ devm-service:
   name: mars-devm
   url: http://localhost:8085
   
+k2-interpreter-service:
+  name: mars-k2i
+  url: http://localhost:9803
+  
+k3-interpreter-service:
+  name: mars-k3i
+  url: http://localhost:9806
+  
 settings:
   server-url: http://192.168.254.253:8181
   reroute-url:
