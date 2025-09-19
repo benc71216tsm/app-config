@@ -32,7 +32,7 @@ camel:
   component:
     smpp:
       configuration:
-        url: "smpp://{{camel.component.smpp.configuration.system-id}}@{{camel.component.smpp.configuration.host}}:{{camel.component.smpp.configuration.port}}?password={{camel.component.smpp.configuration.password}}&enquireLinkTimer=3000&transactionTimer=5000&systemType=producer&destAddr=[destination_address]&sourceAddr={{camel.component.smpp.configuration.source-address}}"
+        url: "smpp://{{camel.component.smpp.configuration.system-id}}@{{camel.component.smpp.configuration.host}}:{{camel.component.smpp.configuration.port}}?password={{camel.component.smpp.configuration.password}}&enquireLinkTimer=3000&transactionTimer=5000&systemType=producer&sourceAddr={{camel.component.smpp.configuration.source-address}}&reconnectDelay=10000&reconnectMax=-1"
         host: ${SMPP_HOST}
         port: ${SMPP_PORT}
         password: ${SMPP_PASSWORD}
