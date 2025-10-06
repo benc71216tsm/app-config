@@ -79,6 +79,10 @@ redis:
   password: chubb@RE@20
   database: 2                       # Default Redis database index
 
+devm-service:
+  name: mars-devm
+  url: http://localhost:8085
+  
 logging:
   pattern:
     level: "%5p [${spring.application.name:},%X{traceId:-},%X{spanId:-}]"

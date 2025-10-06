@@ -74,6 +74,10 @@ redis:
   address: redis://chubb-rds:6379    # Redis server address with redis:// protocol
   password: chubb@RE@20
   database: 2                       # Default Redis database index
+
+devm-service:
+  name: ${DEVM_NAME}
+  url: ${DEVM_HOSTNAME_URL}
   
 logging:
   pattern:
