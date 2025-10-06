@@ -80,24 +80,24 @@ redis:
   database: 2                              # Default Redis database index
   
 resource-service:
-  name: ${RESOURCE_NAME}
-  url: ${RESOURCE_HOSTNAME_URL}
+  name: mars-resource
+  url: http://mars-resource:8084
 
 dev-control-service:
-  name: ${DEVC_NAME}
-  url: ${DEVC_HOSTNAME_URL}
+  name: mars-devc
+  url: http://mars-devc:9812
 
 devm-service:
-  name: ${DEVM_NAME}
-  url: ${DEVM_HOSTNAME_URL}
+  name: mars-devm
+  url: http://mars-devm:8085
   
 k2-interpreter-service:
-  name: ${K2_INTERPRETER_NAME}
-  url: ${K2_INTERPRETER_HOSTNAME_URL}
+  name: mars-k2i
+  url: http://mars-k2i:9803
   
 k3-interpreter-service:
-  name: ${K3_INTERPRETER_NAME}
-  url: ${K3_INTERPRETER_HOSTNAME_URL}
+  name: mars-k3i
+  url: http://mars-k3i:9806
   
 settings:
   server-url: ${SERVER_URL}
