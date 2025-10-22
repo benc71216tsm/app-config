@@ -110,7 +110,7 @@ redis:
 
 settings:
   excluded-site:
-  archive-old-months: 1
+  archive-old-months: 3
 
   
 logging:
