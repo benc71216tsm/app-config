@@ -109,7 +109,8 @@ redis:
   database: 2                       # Default Redis database index
 
 settings:
-  excluded-site: 
+  excluded-site:
+  archive-old-months: 1
 
   
 logging:
