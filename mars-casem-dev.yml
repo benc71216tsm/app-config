@@ -111,6 +111,7 @@ devm-service:
   
 settings:
   excluded-site: 999999
+  alarm-status-type: 1 # CHUBB: 1, BOMBA: 2, INVALID: 0
 
 logging:
   pattern:
