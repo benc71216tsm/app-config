@@ -113,5 +113,6 @@ gateway-service:
 file-storage:
   path: C:\Users\Cheong KP\Desktop\TSM\file-storage
   device: \device
+  audio: \audio
   version: \version
   allowed-extensions: .pdf,.txt,.jpeg,.jpg,.png,.csv,.json,.sh,.apk,.ipa,.zip,.xls,.xlsx,.doc,.docx
