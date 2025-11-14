@@ -99,12 +99,12 @@ kafka:
     retries: 0
   
 sender-service:
-  name: ${SMSS_NAME}
-  url: http://${SMSS_URL}:9821
+  name: ${SENDER_NAME}
+  url: ${SENDER_HOSTNAME_URL}
   
 devm-service:
   name: ${DEVM_NAME}
-  url: http://${DEVM_URL}:8085
+  url: ${DEVM_HOSTNAME_URL}
 
 log: 
   scheduler:
