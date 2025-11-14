@@ -102,6 +102,10 @@ sender-service:
   name: mars-smss
   url: http://localhost:9821
   
+devm-service:
+  name: mars-devm
+  url: http://localhost:8085
+  
 log: 
   scheduler:
     test:

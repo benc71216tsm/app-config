@@ -101,6 +101,10 @@ kafka:
 sender-service:
   name: ${SMSS_NAME}
   url: http://${SMSS_URL}:9821
+  
+devm-service:
+  name: ${DEVM_NAME}
+  url: http://${DEVM_URL}:8085
 
 log: 
   scheduler:

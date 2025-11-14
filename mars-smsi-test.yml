@@ -101,6 +101,10 @@ kafka:
 sender-service:
   name: mars-smss
   url: http://mars-smss:9821
+  
+devm-service:
+  name: mars-devm
+  url: http://mars-devm:8085
 
 log: 
   scheduler:
