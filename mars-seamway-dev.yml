@@ -1,0 +1,44 @@
+server:
+  port: 9828
+  servlet:
+    context-path: /api/v1/
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health
+  endpoint:
+    health:
+      enabled: true
+      
+spring:
+  timezone: UTC+08:00
+  application:
+    name: mars-seamway
+  data:
+    redis:
+      repositories:
+        enabled: false
+jwt:
+  auth:
+    secret: UUtvOYvp9YHz/kQpTYTimW52hefnIW5eh49gnJHZqp4=
+    expiration: 300000 # Access token lifespan (5 min)
+    refreshExpiration: 86400000 # Refresh token lifespan (24 hours)
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/ 
+    
+redis:
+  address: redis://127.0.0.1:6379    # Redis server address with redis:// protocol
+  password: chubb@RE@20
+  database: 2                       # Default Redis database index
+  
+logging:
+  pattern:
+    level: "%5p [${spring.application.name:},%X{traceId:-},%X{spanId:-}]"
+    org.hibernate.SQL: DEBUG
+    org.hibernate.orm.jdbc.bind: TRACE
+    org.hibernate.type.descriptor.sql.BasicBinder: TRACE
