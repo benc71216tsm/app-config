@@ -114,7 +114,7 @@ settings:
   alarm-status-type: 1 # CHUBB: 1, BOMBA: 2, INVALID: 0
   closing-id: 19,27
   close-indication-id: 20,1
-  close-after: 300000 #6minutes
+  close-after: 3600000 #1 hour
 
 
 logging:

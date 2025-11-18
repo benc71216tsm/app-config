@@ -113,6 +113,9 @@ devm-service:
 settings:
   excluded-site: ${EXCLUDED_SITE}
   alarm-status-type: ${ALARM_STATUS_TYPE} # CHUBB: 1, BOMBA: 2, INVALID: 0
+  closing-id: ${CLOSING_IDS}
+  close-indication-id: ${CLOSING_INDICATION_IDS}
+  close-after: ${CLOSE_AFTER} #1 hour
   
 logging:
   pattern:
