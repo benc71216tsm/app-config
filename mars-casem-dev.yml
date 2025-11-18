@@ -112,13 +112,10 @@ devm-service:
 settings:
   excluded-site: 999999
   alarm-status-type: 1 # CHUBB: 1, BOMBA: 2, INVALID: 0
-  auto-close:
-    alarm-event-categories:
-      - closing-id: 19
-        close-indication-id: 20
-      - closing-id: 27
-        close-indication-id: 1
-    close-after: 360000 #6minutes
+  closing-id: 19,27
+  close-indication-id: 20,1
+  close-after: 300000 #6minutes
+
 
 logging:
   pattern:
