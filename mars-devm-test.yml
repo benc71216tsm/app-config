@@ -106,6 +106,10 @@ user-service:
 tnc-service:
   name: ${TNC_NAME}
   url: ${TNC_HOSTNAME_URL}
+
+case-service:
+  name: ${CASE_NAME}
+  url: ${CASE_HOSTNAME_URL} 
   
 k3-interpreter-service:
   name: ${K3_INTER_NAME}
