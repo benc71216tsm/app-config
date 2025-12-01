@@ -57,7 +57,7 @@ logging:
     
 yeastar:
   api:
-    host: 172.16.244.133
+    host: 127.0.0.1
     port: 5038 
     username: apiuser 
     password: apipass
@@ -65,7 +65,7 @@ yeastar:
 
 yeastar-two:
   api:
-    host: 172.16.244.134
+    host: 127.0.0.1
     port: 5038 
     username: apiuser
     password: apipass
